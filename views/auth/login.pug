@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
+  title login
+  style.
+    .bi-person-circle {
+    font-size: 100px;
+    }
+    .image {
+    background-image: url("/image/farmland.jpg");
+    /* The image used */
+    background-color: #cccccc;
+    /* Used if the image is unavailable */
+    height: 800px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    }
+    .header{
+    padding-top: 200px;
+    }
+    .bi-person-circle{
+    padding-left: 260px;
+    }
+    h4{
+    color: rgb(1, 2, 1);
+    }
+    /* .logincard{
+    color: rgb(160, 26, 26);
+    } */
+// nav starts Here
+div(w3-include-html='/includes/navbar.html')
+// nav bar ends here
+.image
+  .container-fluid
+    .row.justify-content-center
+      .col-md-6
+        .header
+          h1 Login Here
+        .card.bg-secondary
+          i.bi.bi-person-circle
+          .card-body
+            form#loginForm(action='#' name='login' onsubmit='validate(event)' method='post')
+              .form.row
+                .col.form-group
+                  label Username
+                  input#uN.form-control(type='text' name='username')
+                  small#uNErr
+                .col.form-group.mb-3
+                  label Password
+                  input#pwd.form-control(name='password' type='password')
+                  small#pwdErr
+              button#login.btn.btn-primary LOGIN
+        h4
+          | If you dont have an account 
+          a(href='') register here
+// footer starts here
+div(w3-include-html='/includes/footer.html')
+// footer ends here
+script(src='/bootstrap/js/bootstrap.bundle.js')
+script(src='/includes/custom.js')
+script(src='/js/loginValidate.js')

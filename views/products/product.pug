@@ -1,0 +1,201 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
+  // <link rel="stylesheet" href="/bootstrap/css/bootstrap-grid.css">
+  style.
+    .nav {
+    content: justify center;
+    }
+    .row {
+    padding-bottom: 30px;
+    }
+    button {
+    background-color: rgb(66, 66, 177);
+    }
+    .callbutton {
+    padding-left: 500px;
+    }
+    .row {
+    margin: 30px;
+    border: solid rgb(9, 99, 9);
+    border-radius: 25px;
+    }
+    .card-img-top {
+    height: 200px;
+    }
+    h5 {
+    text-align: right;
+    font-size: medium;
+    }
+  title Products
+// nav starts Here
+div(w3-include-html='/includes/navbar.html')
+// nav bar ends here
+.container-fluid.mt-3
+  .container-fluid
+    .row
+      h4 Diary products
+      h5 See all
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/milk.jpg' alt='milk')
+            p.card.text
+              | Milk 
+              br
+              |                 organic || Farmer: Mike 
+              br
+              |                 UGX 2500 @bottle
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm.callbutton(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/dairy.jpg' alt='yoghurt')
+            p.card.text
+              | Yoghurt || Farmer: 
+              br
+              |                 UGX 2500 each
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/yoghurt.jpg' alt='yoghurt')
+            p.card.text
+              | yoghurt || Farmer: 
+              br
+              |                 UGX 5000 each
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/yoghurt (2).jpg' alt='yoghurt')
+            p.card.text
+              | yoghurt || Farmer: 
+              br
+              |                 UGX 5000 each
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+  .container-fluid
+    .row
+      h4 Horticulture products
+      h5 See all
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/beans.jpg' alt='beans')
+            p.card.text
+              | beans || Farmer: 
+              br
+              |                 UGX 5000 @batch
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/oranges.jpg' alt='oranges')
+            p.card.text
+              | oranges || Farmer: 
+              br
+              |                 UGX 5000
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/carrots.jpg' alt='carrots')
+            p.card.text
+              | Carrots || Farmer: 
+              br
+              |                 UGX 3000 @bundle
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/cauli.jpg' alt='cauliflower')
+            p.card.text
+              | Cauliflower || Farmer: 
+              br
+              |                 UGX 5000 @
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+  .container-fluid
+    .row
+      h4 Poultry
+      h5 See all
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/layers.jpg' alt='hen')
+            p.card.text
+              | layers || Farmer: 
+              br
+              |                 UGX 20000 @hen
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/chicks.jpg' alt='chicks')
+            p.card.text
+              | chicks || Farmer: 
+              br
+              |                 UGX 8000 @chick
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/eggs.jpg' alt='eggs')
+            p.card.text
+              | Eggs || Farmer: 
+              br
+              |                 UGX 15000 @ tray
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+      .col-3
+        .card
+          .card-body
+            img.card-img-top(src='/image/broilers.jpg' alt='broilers')
+            p.card.text
+              | Broilers || Farmer: 
+              br
+              |                 UGX 25000 @hen
+            button.btn.btn-primary.btn-sm(type='button') Add to cart
+            button.btn.btn-success.btn-sm(type='button')
+              i.bi.bi-telephone
+              | call
+// footer starts here
+div(w3-include-html='/includes/footer.html')
+// footer ends here
+script(src='/bootstrap/js/bootstrap.bundle.js')
+script(src='/includes/custom.js')

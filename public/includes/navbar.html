@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <title>Document</title>
+  <style>
+    .navbar li a {
+      color: rgb(10, 10, 10);
+      font-size: larger;
+    }
+    .cart{
+      font-size: 30px;
+      padding-left: 900px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">UFARM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/products/product.html">Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Customer</a></li>
+              <li><a class="dropdown-item" href="#">Farmer</a></li>
+              <li><a class="dropdown-item" href="#">Agricultural Officer</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="cart">
+          <a href="/products/cart.html"><i class="bi bi-cart4"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script src="bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="/includes/custom.js"></script>
+</body>
+
+</html>

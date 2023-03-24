@@ -1,0 +1,106 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
+  style.
+    .image {
+    background-image: url("/image/farmland.jpg");
+    /* The image used */
+    background-color: #cccccc;
+    /* Used if the image is unavailable */
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    }
+    .card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    .info{
+    font-style: italic;
+    text-align: center;
+    }
+    form{
+    background-color: azure;
+    }
+  title RegisterUF
+// nav starts Here
+div(w3-include-html='/includes/navbar.html')
+// nav bar ends here
+.image
+  .row.justify-content-center
+    .info
+      h3 REGISTER HERE
+      h6 Note:This form is to be filled in by the farmer one 
+    .col-md-6
+      .card
+        .card-body
+          form#regform(action='#' onsubmit='return validate (event)' method='post')
+            .form-group
+              label First name:
+              input#fName.form-control(type='text' name='firstname')
+              small#fNameErr
+            .form-group
+              label Second name:
+              input#sName.form-control(type='text' name='secondname')
+              small#sNameErr
+            .form-group
+              label Date of birth:
+              input#db.form-control(type='date' name='dob')
+              small#dbErr
+            .form-group
+              label Gender:
+              label.form-check.form-check-inline
+                input#male.form-check-input(type='radio' name='gender')
+                span Male
+              label.form-check.form-check-inline
+                input#female.form-check-input(type='radio' name='gender')
+                span Female
+              small#gndErr
+            .form-group
+              label Phone number:
+              input#pNum.form-control(type='text' name='phone number')
+              small#pNumErr
+            .form-group
+              label NIN:
+              input#nin.form-control(type='number' name='NIN')
+              small#ninErr
+            .form-group
+              label Ward:
+              input#wd.form-control(type='text' name='ward name')
+              small#wdErr
+            .form-group
+              label Activities carried out:
+              input#act.form-control(type='text' name='activites')
+              small#actErr
+            .form-group
+              label Date of registration:
+              input#dr.form-control(type='date' name='dreg')
+              small#drErr
+            .form-group
+              label Unique id:
+              input#uI.form-control(type='number' name='unique id')
+              small#uIErr
+            .form-group
+              label(for='pwd') Password:
+              input#pwd.form-control(type='password' name='password')
+              small#pwdErr
+            .checkbox
+              label
+                input(type='checkbox')
+                |  Remember me
+            button#submit.btn.btn-primary.btn-block
+              | Submit
+  // footer starts here
+  div(w3-include-html='/includes/footer.html')
+  // footer ends here
+script(src='/bootstrap/js/bootstrap.js')
+script(src='/js/uFarmerValidate.js')
+script(src='/includes/custom.js')
