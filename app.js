@@ -3,8 +3,8 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 const mongoose = require("mongoose");
-//require("dotenv").config();  //
-const config =  require("./config/database")
+const config =  require("./config/database"); //require("dotenv").config();  //
+const bodyParser = require("body-parser");
 
 
 
@@ -14,9 +14,11 @@ const cartRoute = require("./routes/products/cartroute");
 const upRoute = require("./routes/products/uploadRoute");
 const fOneRegister = require("./routes/auth/fORoute");
 const uFregister = require("./routes/auth/uFroutes");
-const aORegister = require("./routes/auth/aORoute")
+const aORegister = require("./routes/auth/aORoute");
+const tryRoute = require("./routes/tryRoute"); //with steven
 
-
+app.use(bodyParser.json()); //support parsing of application/json type post data
+app.use(bodyParser.urlencoded({extended:true})); //support parsing of application /x-www-form-urlencoded post data
 
 //creating a connection between controller and database
 mongoose.connect(config.database, {
@@ -51,6 +53,10 @@ app.use(upRoute);
 app.use(fOneRegister);
 app.use(uFregister);
 app.use(aORegister);
+
+
+//todays work with stevo
+app.use(tryRoute); 
 
 
 
