@@ -14,7 +14,7 @@ const fOneSchema = new mongoose.Schema({
         trim: true
     },
     gender: {
-        type: Radio
+        type: String,
     },
     phonenumber:{
         type: String,
@@ -58,4 +58,4 @@ const fOneSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("FoneRegister", fOneSchema)
+module.exports = mongoose.model("FoneRegister", fOneSchema);

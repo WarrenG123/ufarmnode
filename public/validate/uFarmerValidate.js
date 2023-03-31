@@ -62,7 +62,7 @@ const validate = (event) => {
         error++
     }
     // gender
-    if (!(female.checked && male.checked)) {
+    if (!(female.checked || male.checked)) {
         genderError.innerHTML = "Pick your gender"
         genderError.style = "color: red"
         error++
@@ -126,11 +126,22 @@ const validate = (event) => {
     // //     error++
     // // }
     //un id
+    const ufregex = /^UF-([0-9]{3})+$/;
     if (!uniqueid.value) {
         uniqueid.style.border = "1px solid red"
         uniqueIdError.textContent = "Please fill in this field"
         uniqueIdError.style = "color: red"
         error++
+    }
+    if ((uniqueid.value != ufregex.value)) {
+        uniqueid.style.border = "1px solid red"
+        uniqueIdError.textContent = "wrong format of the unique id"
+        uniqueIdError.style = "color:red"
+        error++
+    }
+    else{
+        uniqueid.style.border = "1px solid green"
+        uniqueIdError.textContent = ""
     }
     //password
     if (!password.value) {

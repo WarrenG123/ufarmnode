@@ -6,6 +6,6 @@ color scheme
 styling body
 
 to do
-cart pages
+cart page
 home page
 navbar

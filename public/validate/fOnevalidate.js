@@ -61,7 +61,7 @@ const validate = (event) => {
         secondNameError.innerHTML = "second name should have atleast five letters";
         secondNameError.style = "color: red";
         error++;
-    } else if (firstName.value.length > 50) {
+    } else if (secondName.value.length > 50) {
         secondName.style.border = "1px solid red";
         secondNameError.innerHTML = "second name cannot have more than 50 letters";
         secondNameError.style = "color: red";
@@ -75,7 +75,7 @@ const validate = (event) => {
         error++;
     }
     // gender
-    if (!(female.checked && male.checked)) {
+    if (!(female.checked || male.checked)) {
         genderError.innerHTML = "Pick your gender";
         genderError.style = "color: red";
         error++;
@@ -92,7 +92,7 @@ const validate = (event) => {
     } else if (!phoneNumber.value.match(phoneNumberregex)) {
         phoneNumber.style.border = "1px solid red";
         phoneNumberError.innerHTML =
-            "phone number should be in this format +256 700000000";
+            "phone number should be in this format +256 7********";
         phoneNumberError.style = "color: red";
         error++;
     }

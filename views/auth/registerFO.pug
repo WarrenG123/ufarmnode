@@ -47,7 +47,7 @@ div(w3-include-html='/includes/navbar.html')
     .col-md-6
       .card(style='position: relative;')
         .card-body
-          form#regform(action='#' onsubmit='return validate (event)' method='post')
+          form#regform(action='/fOneRegister' onsubmit='return validate (event)' method='post')
             .form-group
               label First name:
               input#fName.form-control(type='text' name='firstname')
@@ -63,10 +63,10 @@ div(w3-include-html='/includes/navbar.html')
             .form-group
               label Gender:
               label.form-check.form-check-inline
-                input#male.form-check-input(type='radio' name='gender')
+                input#male.form-check-input(type='radio' name='gender' value="male")
                 span Male
               label.form-check.form-check-inline
-                input#female.form-check-input(type='radio' name='gender')
+                input#female.form-check-input(type='radio' name='gender' value="female")
                 span Female
               small#gndErr
             .form-group
