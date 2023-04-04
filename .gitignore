@@ -5,3 +5,8 @@ try.pug
 registerModel.js
 students.pug
 try_edit.pug
+signupRoutes.js
+signup.pug
+userModel.js
+login2.pug
+authRoutes.js

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const fOneSchema = require("../../models/registerFoModel")
+const fOneSchema = require("../../models/registerFoModel");
 
 router.get("/fOneRegister", (req, res) => {
     res.render("registerFO")
@@ -8,7 +8,6 @@ router.get("/fOneRegister", (req, res) => {
 router.get("/fOneslist", async(req, res) =>{
     try{
         let items = await fOneSchema.find();
-
         res.render("fOneslist", {farmerOnes:items});
     }
    catch(err) {

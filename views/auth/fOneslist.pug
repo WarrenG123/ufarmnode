@@ -1,12 +1,18 @@
-| doctype html
-| html(lang=&quot;en&quot;)
-| head
-| meta(charset=&quot;UTF-8&quot;)
-| meta(http-equiv=&quot;X-UA-Compatible&quot;, content=&quot;IE=edge&quot;)
-| meta(name=&quot;viewport&quot;, content=&quot;width=device-width, initial-scale=1.0&quot;)
-| title Farmer One list
-| body 
-table.table
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body 
+    head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+    title Farmer One list
+body 
+table.table.table-striped.table-hover.table-bordered
   thead
     tr.table-primary
       th(scope='col') #
@@ -28,7 +34,7 @@ table.table
     if farmerOnes.length 
       each farmerOne in farmerOnes
         tr
-          th(scope='row') 1
+          th(scope='row') 
           td  #{farmerOne.firstname}
           td  #{farmerOne.secondname}
           td  #{farmerOne.dob} 
@@ -45,7 +51,7 @@ table.table
           td  #{farmerOne.password} 
     else 
       p there are no farmer ones in the database
-| script(src=&apos;https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js&apos;)
-| script(src=&apos;/bootstrap/js/bootstrap.js&apos;)
-| script(src=&apos;/bootstrap/js/bootstrap.bundle.js&apos;)
-| script(src=&apos;/includes/custom.js&apos;)
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+script(src='/bootstrap/js/bootstrap.js')
+script(src='/bootstrap/js/bootstrap.bundle.js')
+script(src='/includes/custom.js')
