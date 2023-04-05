@@ -5,7 +5,9 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const config =  require("./config/database"); //require("dotenv").config();  //
 const bodyParser = require("body-parser");
+const passport = require('passport');
 const session = require("express-session");
+
 
 const User = require("./models/userModel"); //for session to work fine
 
@@ -16,10 +18,14 @@ const upRoute = require("./routes/products/uploadRoute");
 const fOneRegister = require("./routes/auth/fORoute");
 const uFregister = require("./routes/auth/uFroutes");
 const aORegister = require("./routes/auth/aORoute");
-const tryRoute = require("./routes/tryRoute"); //with steven
-const signupRoutes = require("./routes/signupRoutes"); //with steven
-const authRoutes = require("./routes/authRoutes"); //with steven
-const passport = require('passport');
+
+//with steven
+const tryRoute = require("./routes/tryRoute"); 
+const signupRoutes = require("./routes/signupRoutes"); 
+const authRoutes = require("./routes/authRoutes"); 
+const aoRoutes = require("./routes/aoRoutes"); 
+const ufRoutes = require("./routes/ufRoutes"); 
+const foRoutes = require("./routes/foRoutes"); 
 
 
 
@@ -78,6 +84,9 @@ app.use(aORegister);
 app.use(tryRoute); 
 app.use(signupRoutes);
 app.use(authRoutes);
+app.use(aoRoutes);
+app.use(ufRoutes);
+app.use(foRoutes);
 
 
 
