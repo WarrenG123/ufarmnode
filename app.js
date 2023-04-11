@@ -19,6 +19,7 @@ const fOneRegister = require("./routes/auth/fORoute");
 const uFregister = require("./routes/auth/uFroutes");
 const aORegister = require("./routes/auth/aORoute");
 
+
 //with steven
 const tryRoute = require("./routes/tryRoute"); 
 const signupRoutes = require("./routes/signupRoutes"); 
@@ -26,7 +27,6 @@ const authRoutes = require("./routes/authRoutes");
 const aoRoutes = require("./routes/aoRoutes"); 
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
-
 
 
 app.use(session({

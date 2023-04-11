@@ -17,8 +17,7 @@ table.table.table-striped.table-hover.table-bordered
   thead
     tr.table-primary
       th(scope='col') #
-      th(scope='col') First Name
-      th(scope='col') Second Name
+      th(scope='col') Name
       th(scope='col') Date of birth
       th(scope='col') Gender
       th(scope='col') Phone number
@@ -36,8 +35,7 @@ table.table.table-striped.table-hover.table-bordered
       each farmerOne in farmerOnes
         tr
           th(scope='row') 
-          td  #{farmerOne.firstname}
-          td  #{farmerOne.secondname}
+          td  #{farmerOne.firstname} #{farmerOne.secondname}
           td  #{farmerOne.dob} 
           td  #{farmerOne.gender} 
           td  #{farmerOne.phonenumber} 
