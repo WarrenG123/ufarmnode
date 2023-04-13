@@ -24,7 +24,7 @@ const aORegister = require("./routes/auth/aORoute");
 const tryRoute = require("./routes/tryRoute"); 
 const signupRoutes = require("./routes/signupRoutes"); 
 const authRoutes = require("./routes/authRoutes"); 
-const aoRoutes = require("./routes/aoRoutes"); 
+const aoRoutes = require("./routes/practiceroute"); 
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
 

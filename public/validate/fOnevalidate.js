@@ -10,8 +10,10 @@ const validate = (event) => {
     let ninNumber = document.getElementById("nin");
     let address = document.getElementById("adr");
     let timePeriod = document.getElementById("tsa");
-    let ward = document.getElementById("wd");
-    let activities = document.getElementById("act");
+    let ward = document.getElementById("wd"); //edit needed
+    let poultry = document.getElementById("poultry");
+    let horti = document.getElementById("hort");
+    let dairy = document.getElementById("dairy");
     let regDate = document.getElementById("dr");
     let uniqueNumber = document.getElementById("uN");
     let password = document.getElementById("pwd");
@@ -99,7 +101,7 @@ const validate = (event) => {
     } else if (!phoneNumber.value.match(phoneNumberregex)) {
         phoneNumber.style.border = "1px solid red";
         phoneNumberError.innerHTML =
-            "phone number should be in this format +256 7********";
+            "phone number should be in this format +2567********";
         phoneNumberError.style = "color: red";
         error++;
     } else {
@@ -155,35 +157,33 @@ const validate = (event) => {
         timePeriod.style.border = "1px solid green";
         timePeriodError.textContent = "";
     }
-    //ard
-    if (!ward.value) {
-        ward.style.border = "1px solid red";
-        wardError.innerHTML = "Please enter the ward you belong to";
-        wardError.style = "color: red";
-        error++;
-    } else {
-        ward.style.border = "1px solid green";
-        wardError.textContent = "";
-    }
+    //ward
+    // if (!ward.value) {
+    //     ward.style.border = "1px solid red"
+    //     wardError.textContent = "Select the ward you belong to"
+    //     wardError.style = "color: red"
+    //     error++
+    // }else {
+    //     ward.style.border = "1px solid green";
+    //     wardError.textContent = "";
+    // }
     //activities
-    if (!activities.value) {
-        activities.style.border = "1px solid red";
-        activitiesError.innerHTML = "Please fill in the activities you carry out";
+    if (!(poultry.checked || horti.checked || dairy.checked)) {
+        activitiesError.innerHTML = "Please select atleast one activity carried out";
         activitiesError.style = "color: red";
         error++;
     } else {
-        activities.style.border = "1px solid green";
         activitiesError.textContent = "";
     }
 
     //un num
-    const unregex = /^FO-([0-9]{3})+$/;
+    const unregex = /^FO\d{3}$/;
     if (!uniqueNumber.value) {
         uniqueNumber.style.border = "1px solid red";
         uniqueNumberError.textContent = "Please fill in this field";
         uniqueNumberError.style = "color: red";
         error++;
-    } else if (uniqueNumber.value != unregex.value) {
+    } else if (!uniqueNumber.value.match(unregex.value)) {
         uniqueNumber.style.border = "1px solid red";
         uniqueNumberError.textContent = "The unique number should be in this format FO-001";
         uniqueNumberError.style = "color: red";

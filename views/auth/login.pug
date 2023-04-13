@@ -24,44 +24,59 @@ head
     background-size: cover;
     /* Resize the background image to cover the entire container */
     }
-    .header{
-    padding-top: 200px;
+    .row {
+    padding-top: 40px;
     }
-    .bi-person-circle{
-    padding-left: 260px;
+    .bi-person-circle {
+    padding-left: 130px;
     }
-    h4{
+    h1 {
     color: rgb(1, 2, 1);
     }
-    /* .logincard{
-    color: rgb(160, 26, 26);
-    } */
+    .button {
+    margin-top: 20px;
+    }
+    .logincard{
+    padding-bottom: 20px;
+    }
 // nav starts Here
 div(w3-include-html='/includes/navbar.html')
 // nav bar ends here
 .image
   .container-fluid
     .row.justify-content-center
-      .col-md-6
-        .header
-          h1 Login Here
-        .card.bg-secondary
-          i.bi.bi-person-circle
+      .col-md-4
+        .card
+          .card-header
+            h4 Login Here
           .card-body
-            form#loginForm(action='#' name='login' onsubmit='validate(event)' method='post')
+            form#loginForm.login(action='#' name='login' onsubmit=' return validate (event)' method='post')
+              i.bi.bi-person-circle
               .form.row
-                .col.form-group
+                .form-group
                   label Username
                   input#uN.form-control(type='text' name='username')
                   small#uNErr
-                .col.form-group.mb-3
+                .form-group
                   label Password
                   input#pwd.form-control(name='password' type='password')
                   small#pwdErr
-              button#login.btn.btn-primary LOGIN
-        h4
-          | If you dont have an account 
-          a(href='') register here
+                .form-group
+                  label Role
+                  select#role.form-control(name='role')
+                    option(value='') (Select a role)
+                    option(value='FarmerOne') Customer
+                    option(value='AgricOfficer') Agricultural Officer
+                    option(value='UrbanFarmer') Urban Farmer
+                    option(value='FarmerOne') Farmer One
+                  small#roleErr
+              .button
+                button#submit.btn.btn-primary LOGIN
+        .card.bg-success
+          .card-body
+            h4
+              | If you dont have an account 
+              a(href='/auth/signup.html') register here
 // footer starts here
 div(w3-include-html='/includes/footer.html')
 // footer ends here

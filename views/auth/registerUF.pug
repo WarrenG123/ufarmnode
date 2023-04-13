@@ -23,12 +23,12 @@ head
     margin-top: 20px;
     margin-bottom: 20px;
     }
-    .info{
-    font-style: italic;
-    text-align: center;
-    }
-    form{
+    fieldset {
     background-color: azure;
+    }
+    legend {
+    background-color: rgb(128, 128, 128);
+    color: rgb(15, 15, 15);
     }
   title RegisterUF
 // nav starts Here
@@ -36,17 +36,18 @@ div(w3-include-html='/includes/navbar.html')
 // nav bar ends here
 .image
   .row.justify-content-center
-    .info
-      h3 REGISTER HERE
-      h6 Note:This form is to be filled in by the farmer one 
     .col-md-6
       .card
+        .card-header
+          h3 Register Urban Farmer
         .card-body
           form#regform(action='#' onsubmit='return validate (event)' method='post')
             .form-group
-              label First name:
-              input#fName.form-control(type='text' name='firstname')
-              small#fNameErr
+              fieldset
+                legend Bio-Data
+                label First name:
+                input#fName.form-control(type='text' name='firstname')
+                small#fNameErr
             .form-group
               label Second name:
               input#sName.form-control(type='text' name='secondname')
@@ -64,34 +65,51 @@ div(w3-include-html='/includes/navbar.html')
                 input#female.form-check-input(type='radio' name='gender')
                 span Female
               small#gndErr
-            .form-group
-              label Phone number:
-              input#pNum.form-control(type='text' name='phonenumber')
-              small#pNumErr
-            .form-group
-              label NIN:
-              input#nin.form-control(type='number' name='NIN')
-              small#ninErr
-            .form-group
-              label Ward:
-              input#wd.form-control(type='text' name='wardname')
-              small#wdErr
-            .form-group
-              label Activities carried out:
-              input#act.form-control(type='text' name='activites')
-              small#actErr
-            .form-group
-              label Date of registration:
-              input#dr.form-control(type='date' name='dreg')
-              small#drErr
-            .form-group
-              label Unique id:
-              input#uI.form-control(type='number' name='uniqueid')
-              small#uIErr
-            .form-group
-              label(for='pwd') Password:
-              input#pwd.form-control(type='password' name='password')
-              small#pwdErr
+            fieldset
+              legend Other
+              .form-group
+                label Phone number:
+                input#pNum.form-control(type='text' name='phone number')
+                small#pNumErr
+              .form-group
+                label NIN:
+                input#nin.form-control(type='number' name='NIN')
+                small#ninErr
+              .form-group
+                label Ward:
+                select#wd.form-control(name='ward')
+                  option(value='') (Select ward)
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+                  small#wdErr
+              .form-group
+                label Activities carried out:
+                label.form-check
+                  input#poultry.form-check-input(type='checkbox' name='poultry' value='Poultry Farming')
+                  span Poultry Farming
+                label.form-check
+                  input#hort.form-check-input(type='checkbox' name='horticulture' value='Horticulture')
+                  span Horticulture
+                label.form-check
+                  input#dairy.form-check-input(type='checkbox' name='dairy' value='Dairy farming')
+                  span Dairy Farming
+                small#actErr
+              .form-group
+                label Date of registration:
+                input#dr.form-control(type='date' name='dreg')
+                small#drErr
+            fieldset
+              legend Authentication
+              .form-group
+                label Unique id:
+                input#uI.form-control(type='number' name='unique id')
+                small#uIErr
+              .form-group
+                label(for='pwd') Password:
+                input#pwd.form-control(type='password' name='password')
+                small#pwdErr
             .checkbox
               label
                 input(type='checkbox')

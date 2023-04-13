@@ -3,13 +3,15 @@ const validate = (event) => {
     //pick input
     let firstName = document.getElementById("fName");
     let secondName = document.getElementById("sName");
-    let birthDate = document.getElementById("db");
+    let birthDate = document.getElementById("db"); //need to validate age
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let phoneNumber = document.getElementById("pNum");
     let ninNumber = document.getElementById("nin");
     let ward = document.getElementById("wd");
-    let activities = document.getElementById("act");
+    let poultry = document.getElementById("poultry");
+    let horti = document.getElementById("hort");
+    let dairy = document.getElementById("dairy");
     let regDate = document.getElementById("dr");
     let uniqueid = document.getElementById("uI");
     let password = document.getElementById("pwd");
@@ -41,6 +43,15 @@ const validate = (event) => {
         firstNameError.style = "color: red"
         error++
     }
+    else if (firstName.value.length > 50) {
+        firstName.style.border = "1px solid red";
+        firstNameError.innerHTML = "first name cannot have more than 50 letters";
+        firstNameError.style = "color: red";
+        error++;
+    } else {
+        firstName.style.border = "1px solid green";
+        firstNameError.textContent = "";
+    }
     //for second name
     if (!secondName.value) {
         secondName.style.border = "1px solid red"
@@ -48,18 +59,30 @@ const validate = (event) => {
         secondNameError.style = "color: red"
         error++
     }
-    else if (firstName.value.length < 5) {
-        firstName.style.border = "1px solid red"
-        firstNameError.innerHTML = "first name should have atleast four letters"
-        firstNameError.style = "color: red"
+    else if (secondName.value.length < 5) {
+        secondName.style.border = "1px solid red"
+        secondNameError.innerHTML = "first name should have atleast four letters"
+        secondNameError.style = "color: red"
         error++
+    }
+    else if (secondName.value.length > 50) {
+        secondName.style.border = "1px solid red";
+        secondNameError.innerHTML = "second name cannot have more than 50 letters";
+        secondNameError.style = "color: red";
+        error++;
+    } else {
+        secondName.style.border = "1px solid green";
+        secondNameError.textContent = "";
     }
     // // DOB
     if (!birthDate.value) {
-        birthDate.style.border = "1px solid red"
-        birthDateError.textContent = "Please fill in this field"
-        birthDateError.style = "color: red"
+        birthDate.style.border = "1px solid red";
+        birthDateError.textContent = "Please fill in this field";
+        birthDateError.style = "color: red";
         error++
+    } else {
+        birthDate.style.border = "1px solid green";
+        birthDateError.textContent = "";
     }
     // gender
     if (!(female.checked || male.checked)) {
@@ -80,9 +103,12 @@ const validate = (event) => {
     }
     else if (!phoneNumber.value.match(phoneNumberregex)) {
         phoneNumber.style.border = "1px solid red"
-        phoneNumberError.innerHTML = "phone number should be in thi format +256 700000000"
+        phoneNumberError.innerHTML = "phone number should be in thi format +256 7********"
         phoneNumberError.style = "color: red"
         error++
+    } else {
+        phoneNumber.style.border = "1px solid green";
+        phoneNumberError.textContent = "";
     }
     // //nin
     //   const ninNumberregex = /^     $/
@@ -98,19 +124,28 @@ const validate = (event) => {
     // //     ninNumberError.style = "color: red"
     // //     error++
     // // }
-    // //ard
-    if (!ward.value) {
-        ward.style.border = "1px solid red"
-        wardError.innerHTML = "Please enter the ward you belong to"
-        wardError.style = "color: red"
-        error++
+    else {
+        ninNumber.style.border = "1px solid green";
+        ninNumberError.textContent = "";
     }
+    // //ard
+     // if (!ward.value) {
+    //     ward.style.border = "1px solid red";
+    //     wardError.innerHTML = "Please select the ward";
+    //     wardError.style = "color: red";
+    //     error++;
+    // } else {
+    //     ward.style.border = "1px solid green";
+    //     wardError.textContent = "";
+    // }
     //activities
-    if (!activities.value) {
-        activities.style.border = "1px solid red"
-        activitiesError.innerHTML = "Please fill in the activities you carry out"
-        activitiesError.style = "color: red"
-        error++
+    if (!(poultry.checked || horti.checked || dairy.checked)) {
+        activitiesError.innerHTML = "Please select atleast one activity carried out";
+        activitiesError.style = "color: red";
+        error++;
+    } else {
+        activities.style.border = "1px solid green";
+        activitiesError.textContent = "";
     }
     //reg
     if (!regDate.value) {
@@ -125,30 +160,37 @@ const validate = (event) => {
     // //     regDateError.style = "color: red"
     // //     error++
     // // }
+    else {
+        regDate.style.border = "1px solid green";
+        regDateError.textContent = "";
+    }
     //un id
-    const ufregex = /^UF-([0-9]{3})+$/;
+    const idregex = /^UF-([0-9]{3})+$/;
     if (!uniqueid.value) {
         uniqueid.style.border = "1px solid red"
         uniqueIdError.textContent = "Please fill in this field"
         uniqueIdError.style = "color: red"
         error++
-    }
-    if ((uniqueid.value != ufregex.value)) {
+    } else if (!uniqueid.value.match(idregex)) {
         uniqueid.style.border = "1px solid red"
-        uniqueIdError.textContent = "wrong format of the unique id"
-        uniqueIdError.style = "color:red"
+        uniqueIdError.innerHTML = "Wrong format of id"
+        uniqueIdError.style = "color: red"
         error++
     }
-    else{
-        uniqueid.style.border = "1px solid green"
-        uniqueIdError.textContent = ""
+    else {
+        uniqueid.style.border = "1px solid green";
+        uniqueIdError.textContent = "";
     }
     //password
+    //const passregex =
     if (!password.value) {
         password.style.border = "1px solid red"
         passwordError.textContent = "Please fill in your password"
         passwordError.style = "color: red"
         error++
+    } else {
+        password.style.border = "1px solid green";
+        passwordError.textContent = "";
     }
 
 
