@@ -158,15 +158,15 @@ const validate = (event) => {
         timePeriodError.textContent = "";
     }
     //ward
-    // if (!ward.value) {
-    //     ward.style.border = "1px solid red"
-    //     wardError.textContent = "Select the ward you belong to"
-    //     wardError.style = "color: red"
-    //     error++
-    // }else {
-    //     ward.style.border = "1px solid green";
-    //     wardError.textContent = "";
-    // }
+    if (!ward.value) {
+        ward.style.border = "1px solid red";
+        wardError.textContent = "Select the ward you belong to";
+        wardError.style = "color: red";
+        error++
+    }else {
+        ward.style.border = "1px solid green";
+        wardError.textContent = "";
+    }
     //activities
     if (!(poultry.checked || horti.checked || dairy.checked)) {
         activitiesError.innerHTML = "Please select atleast one activity carried out";

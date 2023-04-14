@@ -76,6 +76,10 @@ div(w3-include-html='/includes/navbar.html')
                 input#nin.form-control(type='number' name='NIN')
                 small#ninErr
               .form-group
+                label Date of registration:
+                input#dr.form-control(type='date' name='dreg')
+                small#drErr
+              .form-group
                 label Ward:
                 select#wd.form-control(name='ward')
                   option(value='') (Select ward)
@@ -83,7 +87,7 @@ div(w3-include-html='/includes/navbar.html')
                   option(value='2') 2
                   option(value='3') 3
                   option(value='4') 4
-                  small#wdErr
+                small#wdErr
               .form-group
                 label Activities carried out:
                 label.form-check
@@ -96,10 +100,6 @@ div(w3-include-html='/includes/navbar.html')
                   input#dairy.form-check-input(type='checkbox' name='dairy' value='Dairy farming')
                   span Dairy Farming
                 small#actErr
-              .form-group
-                label Date of registration:
-                input#dr.form-control(type='date' name='dreg')
-                small#drErr
             fieldset
               legend Authentication
               .form-group

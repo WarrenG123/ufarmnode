@@ -9,6 +9,7 @@ head
   style.
     .bi-person-circle {
     font-size: 100px;
+    margin-left: 120px;
     }
     .image {
     background-image: url("/image/farmland.jpg");
@@ -27,17 +28,20 @@ head
     .row {
     padding-top: 40px;
     }
-    .bi-person-circle {
-    padding-left: 130px;
-    }
     h1 {
     color: rgb(1, 2, 1);
     }
     .button {
     margin-top: 20px;
     }
-    .logincard{
+    /*
+    .logincard {
     padding-bottom: 20px;
+    } */
+    .form-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
 // nav starts Here
 div(w3-include-html='/includes/navbar.html')
@@ -46,33 +50,35 @@ div(w3-include-html='/includes/navbar.html')
   .container-fluid
     .row.justify-content-center
       .col-md-4
-        .card
-          .card-header
-            h4 Login Here
-          .card-body
-            form#loginForm.login(action='#' name='login' onsubmit=' return validate (event)' method='post')
-              i.bi.bi-person-circle
-              .form.row
-                .form-group
-                  label Username
-                  input#uN.form-control(type='text' name='username')
-                  small#uNErr
-                .form-group
-                  label Password
-                  input#pwd.form-control(name='password' type='password')
-                  small#pwdErr
-                .form-group
-                  label Role
-                  select#role.form-control(name='role')
-                    option(value='') (Select a role)
-                    option(value='FarmerOne') Customer
-                    option(value='AgricOfficer') Agricultural Officer
-                    option(value='UrbanFarmer') Urban Farmer
-                    option(value='FarmerOne') Farmer One
-                  small#roleErr
-              .button
-                button#submit.btn.btn-primary LOGIN
-        .card.bg-success
+        .card-container
+          .card
+            .card-header
+              h4 Login Here
+            .card-body
+              form#loginForm.login(action='#' name='login' onsubmit=' return validate (event)' method='post')
+                .form.row
+                  i.bi.bi-person-circle
+                .form.row
+                  .form-group
+                    label Username
+                    input#uN.form-control(type='text' name='username')
+                    small#uNErr
+                  .form-group
+                    label Password
+                    input#pwd.form-control(name='password' type='password')
+                    small#pwdErr
+                  .form-group
+                    label Role
+                    select#role.form-control(name='role')
+                      option(value='') (Select a role)
+                      option(value='FarmerOne') Customer
+                      option(value='AgricOfficer') Agricultural Officer
+                      option(value='UrbanFarmer') Urban Farmer
+                      option(value='FarmerOne') Farmer One
+                    small#roleErr
+                .button
+                  button#submit.btn.btn-primary LOGIN
+        .card.bg-success(style='margin-top: 20px;')
           .card-body
             h4
               | If you dont have an account 
