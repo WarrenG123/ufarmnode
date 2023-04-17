@@ -6,7 +6,7 @@ registerModel.js
 students.pug
 try_edit.pug
 signupRoutes.js
-signup.pug
+signup2.pug
 userModel.js
 login2.pug
 authRoutes.js
