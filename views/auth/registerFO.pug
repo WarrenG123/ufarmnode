@@ -122,6 +122,12 @@ div(w3-include-html='/includes/navbar.html')
             fieldset
               legend Authentication
               .form-group
+                    label Role
+                    select#role.form-control(name='role')
+                      option(value='') (Select a role)
+                      option(value='fo') Farmer One
+                    small#roleErr
+              .form-group
                 label Unique number:
                 input#uN.form-control(type='text' name='unique number')
                 small#uNErr

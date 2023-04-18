@@ -15,6 +15,7 @@ const validate = (event) => {
     let regDate = document.getElementById("dr");
     let uniqueid = document.getElementById("uI");
     let password = document.getElementById("pwd");
+    let role = document.getElementById("role");
 
     //pick error
     let firstNameError = document.getElementById("fNameErr");
@@ -28,6 +29,8 @@ const validate = (event) => {
     let regDateError = document.getElementById("drErr");
     let uniqueIdError = document.getElementById("uIErr");
     let passwordError = document.getElementById("pwdErr");
+    let roleErr = document.getElementById("roleErr");
+
 
 
     //for empty on name
@@ -191,6 +194,15 @@ const validate = (event) => {
     } else {
         password.style.border = "1px solid green";
         passwordError.textContent = "";
+    }
+    if (!role.value) {
+        role.style.border = "1px solid red";
+        roleErr.textContent = "Select youre role";
+        roleErr.style = "color: red";
+        error++
+    } else {
+        role.style.border = "1px solid green";
+        roleErr.textContent = "";
     }
 
 

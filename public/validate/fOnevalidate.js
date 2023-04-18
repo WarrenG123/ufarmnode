@@ -18,6 +18,8 @@ const validate = (event) => {
     let uniqueNumber = document.getElementById("uN");
     let password = document.getElementById("pwd");
     let resid = document.getElementById("rT");
+    let role = document.getElementById("role");
+    
 
     //pick error
     let firstNameError = document.getElementById("fNameErr");
@@ -34,6 +36,8 @@ const validate = (event) => {
     let uniqueNumberError = document.getElementById("uNErr");
     let passwordError = document.getElementById("pwdErr");
     let residError = document.getElementById("rTErr");
+    let roleErr = document.getElementById("roleErr");
+
 
     //for empty on name
     if (!firstName.value) {
@@ -229,6 +233,15 @@ const validate = (event) => {
     } else {
         resid.style.border = "1px solid green";
         residError.textContent = "";
+    }
+    if (!role.value) {
+        role.style.border = "1px solid red";
+        roleErr.textContent = "Select youre role";
+        roleErr.style = "color: red";
+        error++
+    } else {
+        role.style.border = "1px solid green";
+        roleErr.textContent = "";
     }
 
     if (error > 0) {

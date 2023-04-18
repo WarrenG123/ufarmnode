@@ -2,22 +2,24 @@ const validate = (event) => {
     let error = 0;
     //pick input
     let firstName = document.getElementById("fN");
-    let lastName = document.getElementById("lN");
+    let secondname = document.getElementById("lN");
     let birthDate = document.getElementById("dob");  //need to validate age
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let phoneNumber = document.getElementById("pNum");
-    let uName = document.getElementById("username")
+    let uName = document.getElementById("username");
     let password = document.getElementById("pwd");
+    let role = document.getElementById("role");
 
     //pick error
     let firstNameError = document.getElementById("fNErr");
-    let lastNameError = document.getElementById("lNErr");
+    let secondnameError = document.getElementById("lNErr");
     let birthDateError = document.getElementById("dbErr");
     let genderError = document.getElementById("gndErr");
     let phoneNumberError = document.getElementById("pNumErr");
     let uNameErr = document.getElementById("uNErr");
     let passwordError = document.getElementById("pwdErr");
+    let roleErr = document.getElementById("roleErr");
 
 
     //for empty on name
@@ -41,24 +43,24 @@ const validate = (event) => {
         firstNameError.textContent = "";
     }
     //for second name
-    if (!lastName.value) {
-        lastName.style.border = "1px solid red";
-        lastNameError.textContent = "Please enter second name";
-        lastNameError.style = "color: red";
+    if (!secondname.value) {
+        secondname.style.border = "1px solid red";
+        secondnameError.textContent = "Please enter second name";
+        secondnameError.style = "color: red";
         error++;
-    } else if (lastName.value.length < 5) {
-        lastName.style.border = "1px solid red";
-        lastNameError.innerHTML = "second name should have atleast five letters";
-        lastNameError.style = "color: red";
+    } else if (secondname.value.length < 5) {
+        secondname.style.border = "1px solid red";
+        secondnameError.innerHTML = "second name should have atleast five letters";
+        secondnameError.style = "color: red";
         error++;
-    } else if (lastName.value.length > 50) {
-        lastName.style.border = "1px solid red";
-        lastNameError.innerHTML = "second name cannot have more than 50 letters";
-        lastNameError.style = "color: red";
+    } else if (secondname.value.length > 50) {
+        secondname.style.border = "1px solid red";
+        secondnameError.innerHTML = "second name cannot have more than 50 letters";
+        secondnameError.style = "color: red";
         error++;
     }else {
-        lastName.style.border = "1px solid green";
-        lastNameError.textContent = "";
+        secondname.style.border = "1px solid green";
+        secondnameError.textContent = "";
     }
     // DOB
     if (!birthDate.value) {
@@ -115,6 +117,16 @@ const validate = (event) => {
         password.style.border = "1px solid green";
        passwordError.textContent = "";
     }
+    if (!role.value) {
+        role.style.border = "1px solid red";
+        roleErr.textContent = "Select youre role";
+        roleErr.style = "color: red";
+        error++
+    } else {
+        role.style.border = "1px solid green";
+        roleErr.textContent = "";
+    }
+    
 
     if (error > 0) {
         event.preventDefault();

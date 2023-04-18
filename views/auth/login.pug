@@ -55,27 +55,18 @@ div(w3-include-html='/includes/navbar.html')
             .card-header
               h4 Login Here
             .card-body
-              form#loginForm.login(action='#' name='login' onsubmit=' return validate (event)' method='post')
+              form#loginForm.login(action='/login' name='login' onsubmit=' return validate (event)' method='post')
                 .form.row
                   i.bi.bi-person-circle
                 .form.row
                   .form-group
                     label Username
-                    input#uN.form-control(type='text' name='username')
+                    input#uN.form-control(type='text' name='uniqueid')
                     small#uNErr
                   .form-group
                     label Password
                     input#pwd.form-control(name='password' type='password')
                     small#pwdErr
-                  .form-group
-                    label Role
-                    select#role.form-control(name='role')
-                      option(value='') (Select a role)
-                      option(value='FarmerOne') Customer
-                      option(value='AgricOfficer') Agricultural Officer
-                      option(value='UrbanFarmer') Urban Farmer
-                      option(value='FarmerOne') Farmer One
-                    small#roleErr
                 .button
                   button#submit.btn.btn-primary LOGIN
         .card.bg-success(style='margin-top: 20px;')
@@ -84,7 +75,7 @@ div(w3-include-html='/includes/navbar.html')
               | If you dont have an account 
               a(href='/auth/signup.pug') register here
 // footer starts here
-div(w3-include-html='/includes/footer.pug')
+div(w3-include-html='/includes/footer.html')
 // footer ends here
 script(src='/js/bootstrap.bundle.js')
 script(src='/includes/custom.js')

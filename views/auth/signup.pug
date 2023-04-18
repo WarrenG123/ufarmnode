@@ -41,20 +41,20 @@ div(w3-include-html='/includes/navbar.html')
       .card
         .card-header SIGN UP
         .card-body
-          form#signup(action='#' onsubmit='return validate(event)' method='post')
+          form#signup(action='/signup' onsubmit='return validate(event)' method='post' name="signup")
             fieldset
               legend Bio-Data
               .form-group
                 label(for='firstname') First name:
-                input#fN.form-control(type='text')
+                input#fN.form-control(type='text' name='firstname')
                 small#fNErr
               .form-group
-                label(for='lastname') Last name:
-                input#lN.form-control(type='text')
+                label(for='secondname') Second name:
+                input#lN.form-control(type='text' name='secondname')
                 small#lNErr
               .form-group
                 label(for='dob') Date of birth:
-                input#dob.form-control(type='date')
+                input#dob.form-control(type='date' name='dob')
                 small#dbErr
               .form-group
                 label(for='gender') Gender:
@@ -69,15 +69,22 @@ div(w3-include-html='/includes/navbar.html')
               legend Authentication
               .form-group
                 label(for='phonenumber') Phone number:
-                input#pNum.form-control(type='text')
+                input#pNum.form-control(type='text' name='phonenumber')
                 small#pNumErr
               .form-group
                 label(for='username') User name:
-                input#username.form-control(type='text')
+                input#username.form-control(type='text' name='uniqueid')
                 small#uNErr
               .form-group
+                label Role
+                select#role.form-control(name='role')
+                  option(value='') (Select a role)
+                  option(value='cus') Customer
+                  option(value='ao') Agricultural Officer
+                small#roleErr
+              .form-group
                 label(for='password') Password:
-                input#pwd.form-control(type='password')
+                input#pwd.form-control(type='password' name='password')
                 small#pwdErr
             .form-group.form-check
               label.form-check-label
@@ -87,6 +94,6 @@ div(w3-include-html='/includes/navbar.html')
 // footer starts here
 div(w3-include-html='/includes/footer.html')
 // footer ends here
-script(src='/public/validate/signUpValidate.js')
-script(src='./public/bootstrap/js/bootstrap.js')
-script(src='./public/includes/custom.js')
+script(src='/validate/signUpValidate.js')
+script(src='/bootstrap/js/bootstrap.js')
+script(src='/includes/custom.js')
