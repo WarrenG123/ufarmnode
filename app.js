@@ -18,12 +18,12 @@ const upRoute = require("./routes/products/uploadRoute");
 const fOneRegister = require("./routes/auth/fORoute");
 const uFregister = require("./routes/auth/uFroutes");
 const aORegister = require("./routes/auth/aORoute");
+const signupRoutes = require("./routes/signupRoutes"); 
+const authRoutes = require("./routes/authRoutes"); 
 
 
 //with steven 
 const tryRoute = require("./routes/tryRoute"); 
-const signupRoutes = require("./routes/signupRoutes"); 
-const authRoutes = require("./routes/authRoutes"); 
 const aoRoutes = require("./routes/practiceroute"); 
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
@@ -78,12 +78,11 @@ app.use(upRoute);
 app.use(fOneRegister);
 app.use(uFregister);
 app.use(aORegister);
-
+app.use(signupRoutes);
+app.use(authRoutes);
 
 // work with steven
 app.use(tryRoute); 
-app.use(signupRoutes);
-app.use(authRoutes);
 app.use(aoRoutes);
 app.use(ufRoutes);
 app.use(foRoutes);

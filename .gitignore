@@ -1,15 +1,9 @@
 node_modules
-try.html
 tryRoute.js
 try.pug
 registerModel.js
 students.pug
 try_edit.pug
-signupRoutes.js
-signup2.pug
-userModel.js
-login2.pug
-authRoutes.js
 aoDash.pug
 ufDash.pug
 foDash.pug
