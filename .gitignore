@@ -4,7 +4,6 @@ try.pug
 registerModel.js
 students.pug
 try_edit.pug
-aoDash.pug
 ufDash.pug
 foDash.pug
 aoRoutes.js

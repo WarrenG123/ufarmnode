@@ -34,7 +34,7 @@ table.table.table-striped.table-hover.table-bordered
     if farmerOnes.length 
       each farmerOne in farmerOnes
         tr
-          th(scope='row') 
+          th(scope='row') 1
           td  #{farmerOne.firstname} #{farmerOne.secondname}
           td  #{farmerOne.dob} 
           td  #{farmerOne.gender} 
@@ -46,7 +46,7 @@ table.table.table-striped.table-hover.table-bordered
           td  #{farmerOne.ward} 
           td  #{farmerOne.activities} 
           td  #{farmerOne.dreg} 
-          td  #{farmerOne.uniquenumber} 
+          td  #{farmerOne.uniqueid} 
           td  #{farmerOne.password} 
     else 
       p there are no farmer ones in the database

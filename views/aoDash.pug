@@ -1,0 +1,43 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+  title Agricultural Officer Dashboard
+// Sidebar
+#mySidebar.w3-sidebar.w3-bar-block.w3-border-right
+  button.w3-bar-item.w3-large(onclick='w3_close()') Close &times;
+  a.w3-bar-item.w3-button(href='../views/auth/registerFO.pug') Register new Farmer one
+  a.w3-bar-item.w3-button(href='')  Registered Farmer Ones
+  a.w3-bar-item.w3-button(href='#') Messages
+  a.w3-bar-item.w3-button(href='#') Log out
+.w3-green
+  button.w3-button.w3-green.w3-xlarge(onclick='w3_open()') &#x2630;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form(method="POST" action='/logout')
+    button.btn(type= 'submit' width='100px') Signout
+
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
+script(src='/bootstrap/js/bootstrap.js')
+script(src='/bootstrap/js/bootstrap.bundle.js')
+script(src='/includes/custom.js')
+script(src='/includes/sidebar.js')
