@@ -76,7 +76,7 @@ div(w3-include-html='/includes/navbar.html')
               legend Other
               .form-group
                 label Phone number:
-                input#pNum.form-control(type='text' name='phone number')
+                input#pNum.form-control(type='text' name='phonenumber')
                 small#pNumErr
               .form-group
                 label NIN:
@@ -88,7 +88,10 @@ div(w3-include-html='/includes/navbar.html')
                 small#adrErr
               .form-group
                 label Residence type:
-                input#rT.form-control(type='text' name='residence type')
+                 select#rT.form-control(name='residence')
+                  option(value='') (Select residence type)
+                  option(value='perm') permanent
+                  option(value='temp') Temporary
                 small#rTErr
               .form-group
                 label Years spent in the area:
@@ -129,7 +132,7 @@ div(w3-include-html='/includes/navbar.html')
                     small#roleErr
               .form-group
                 label Unique number:
-                input#uN.form-control(type='text' name='unique number')
+                input#uN.form-control(type='text' name='uniqueid')
                 small#uNErr
               .form-group
                 label(for='pwd') Password:
@@ -141,7 +144,7 @@ div(w3-include-html='/includes/navbar.html')
   div(w3-include-html='/includes/footer.html')
   // footer ends here
 script(src='/bootstrap/js/bootstrap.js')
-script(src='/js/fOnevalidate.js')
+script(src='/validate/fOnevalidate.js')
 script(src='/includes/custom.js')
 //
   <script src="bootstrap/js/bootstrap.js"></script>
