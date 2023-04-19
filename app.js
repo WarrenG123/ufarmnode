@@ -7,6 +7,9 @@ const config =  require("./config/database"); //require("dotenv").config();  //
 const bodyParser = require("body-parser");
 const passport = require('passport');
 const session = require("express-session");
+const flash = require('connect-flash');
+
+
 
 
 const User = require("./models/userModel"); //for session to work fine
@@ -15,8 +18,8 @@ const homeRoute = require("./routes/homeRoute");
 const prodRoute = require("./routes/products/prodRoute");
 const cartRoute = require("./routes/products/cartroute");
 const upRoute = require("./routes/products/uploadRoute");
-const fOneRegister = require("./routes/auth/fORoute");
-const uFregister = require("./routes/auth/uFroutes");
+const fOneRegister = require("./routes/auth/foRegRoute");
+const uFregister = require("./routes/auth/uFRegRoutes");
 const aORegister = require("./routes/auth/aORoute");
 const signupRoutes = require("./routes/signupRoutes"); 
 const authRoutes = require("./routes/authRoutes"); 
@@ -28,7 +31,7 @@ const aoRoutes = require("./routes/practiceroute");
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
 
-
+app.use(flash());// to display flash messages
 app.use(session({
     secret: "secret",
     resave: false,
