@@ -33,7 +33,28 @@ router.post("/fOneRegister", async (req, res) => {
     }
 })
 
+router.get("/edit_farmerOne/:id", async(req, res) => {
+    try{
+        const data = await User.findOne({_id:req.params.id});
+        res.render("foEdit", {farmerOne:data});
+    }
+    catch(err) {
+        res.send("could not find farmer one");
+        console.log(err);
+    }
+})
 
+router.post("/edit_farmerOne", async(req, res) => {
+    try{
+        await User.findOneAndUpdate({_id:req.query.id}, req.body);
+        req.flash('success', 'farmer one has been updated');
+        res.redirect("/aodash");
+    }
+    catch(err) {
+        res.send("Failed to update farmerOne details");
+        console.log(err);
+    }
+})
 
 
 
@@ -53,7 +74,7 @@ router.post("/fOneRegister", async (req, res) => {
 //     }
 //    catch(err) {
 //     console.log(err)
-//     res.send("failed to retrieve student details");
+//     res.send("failed to retrieve farmerOne details");
 //    }
 // });
 

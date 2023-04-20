@@ -10,7 +10,6 @@ head
 #mySidebar.w3-sidebar.w3-bar-block.w3-border-right
   button.w3-bar-item.w3-large(onclick='w3_close()') Close &times;
   a.w3-bar-item.w3-button(href='fOneRegister') Register new Farmer one
-  a.w3-bar-item.w3-button(href='')  Registered Farmer Ones
   a.w3-bar-item.w3-button(href='#') Messages
   a.w3-bar-item.w3-button(href='#') Log out
 .w3-green
@@ -41,15 +40,10 @@ head
                 th(scope='col') Date of birth
                 th(scope='col') Gender
                 th(scope='col') Phone number
-                th(scope='col') NIN
                 th(scope='col') Address
-                th(scope='col') Residence type
-                th(scope='col') Years lived in Area
                 th(scope='col') Ward
                 th(scope='col') Activities done
-                th(scope='col') Date of Registration
                 th(scope='col') Unique Number
-                th(scope='col') Password
             tbody
               if data.length
                each farmerOne in data
@@ -58,20 +52,12 @@ head
                   td #{farmerOne.dob} 
                   td #{farmerOne.gender} 
                   td #{farmerOne.phonenumber} 
-                  td #{farmerOne.NIN} 
                   td #{farmerOne.address} 
-                  td #{farmerOne.residence} 
-                  td #{farmerOne.time} 
                   td #{farmerOne.ward} 
                   td #{farmerOne.activities} 
-                  td #{farmerOne.dreg} 
                   td #{farmerOne.uniqueid} 
-                  td #{farmerOne.password} 
-                        //-     form(method='post', action='/students/delete')
-                        //-         input(type='hidden', name="id", value=student._id)
-                        //-         button.btn.btn-danger(type='submit') Delete
-                        //- td        
-                        //-     a.btn.btn-dark.btn-block(href='/edit_student/'+student._id) Edit
+                  td
+                    a.btn.btn-dark.btn-block(href='/edit_farmerOne/'+farmerOne._id) Edit
               else 
                 p 
                   h4 There are no farmer ones registered yet

@@ -20,7 +20,6 @@ const cartRoute = require("./routes/products/cartroute");
 const upRoute = require("./routes/products/uploadRoute");
 const fOneRegister = require("./routes/auth/foRegRoute");
 const uFregister = require("./routes/auth/uFRegRoutes");
-const aORegister = require("./routes/auth/aORoute");
 const signupRoutes = require("./routes/signupRoutes"); 
 const authRoutes = require("./routes/authRoutes"); 
 
@@ -80,7 +79,6 @@ app.use(cartRoute);
 app.use(upRoute);
 app.use(fOneRegister);
 app.use(uFregister);
-app.use(aORegister);
 app.use(signupRoutes);
 app.use(authRoutes);
 app.use(aoRoutes);
