@@ -90,8 +90,8 @@ div(w3-include-html='/includes/navbar.html')
                 label Residence type:
                  select#rT.form-control(name='residence')
                   option(value='') (Select residence type)
-                  option(value='perm') permanent
-                  option(value='temp') Temporary
+                  option(value='permanent') permanent
+                  option(value='temporary') temporary
                 small#rTErr
               .form-group
                 label Years spent in the area:
@@ -113,13 +113,13 @@ div(w3-include-html='/includes/navbar.html')
               .form-group
                 label Activities carried out:
                 label.form-check
-                  input#poultry.form-check-input(type='checkbox' name='poultry' value='Poultry Farming')
+                  input#poultry.form-check-input(type='checkbox' name='activities' value='Poultry Farming')
                   span Poultry Farming
                 label.form-check
-                  input#hort.form-check-input(type='checkbox' name='horticulture' value='Horticulture')
+                  input#hort.form-check-input(type='checkbox' name='activities' value='Horticulture')
                   span Horticulture
                 label.form-check
-                  input#dairy.form-check-input(type='checkbox' name='dairy' value='Dairy farming')
+                  input#dairy.form-check-input(type='checkbox' name='activities' value='Dairy farming')
                   span Dairy Farming
                 small#actErr
             fieldset

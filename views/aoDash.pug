@@ -15,8 +15,8 @@ head
   a.w3-bar-item.w3-button(href='#') Log out
 .w3-green
   button.w3-button.w3-green.w3-xlarge(onclick='w3_open()') &#x2630;
-
-.container
+//data
+.container-fluid
   fieldset
     // Form Name
     legend
@@ -24,9 +24,7 @@ head
         h2
           b Agricultural Officer Dashboard
     br
-
     .container
-
       h3    
       fieldset 
         h5  
@@ -36,7 +34,6 @@ head
           //- | Number of Urban Farmers in ward #{farmerWard}: #{activeFarmers}
           //- br
           h3 Registered Farmer ones  
-      
           table.table.table-striped.table-hover.table-bordered
             thead
               tr.table-primary
@@ -54,32 +51,30 @@ head
                 th(scope='col') Unique Number
                 th(scope='col') Password
             tbody
-              if farmerOnes.length > 0
-                each farmerOne in farmerOnes
-                  tr
-                    td  #{farmerOne.firstname} #{farmerOne.secondname}
-                    td  #{farmerOne.dob} 
-                    td  #{farmerOne.gender} 
-                    td  #{farmerOne.phonenumber} 
-                    td  #{farmerOne.NIN} 
-                    td  #{farmerOne.address} 
-                    td  #{farmerOne.residencetype} 
-                    td  #{farmerOne.time} 
-                    td  #{farmerOne.ward} 
-                    td  #{farmerOne.activities} 
-                    td  #{farmerOne.dreg} 
-                    td  #{farmerOne.uniqueid} 
-                    td  #{farmerOne.password} 
-
+              if data.length
+               each farmerOne in data
+                tr
+                  td #{farmerOne.firstname} #{farmerOne.secondname}
+                  td #{farmerOne.dob} 
+                  td #{farmerOne.gender} 
+                  td #{farmerOne.phonenumber} 
+                  td #{farmerOne.NIN} 
+                  td #{farmerOne.address} 
+                  td #{farmerOne.residence} 
+                  td #{farmerOne.time} 
+                  td #{farmerOne.ward} 
+                  td #{farmerOne.activities} 
+                  td #{farmerOne.dreg} 
+                  td #{farmerOne.uniqueid} 
+                  td #{farmerOne.password} 
                         //-     form(method='post', action='/students/delete')
                         //-         input(type='hidden', name="id", value=student._id)
                         //-         button.btn.btn-danger(type='submit') Delete
-
                         //- td        
                         //-     a.btn.btn-dark.btn-block(href='/edit_student/'+student._id) Edit
               else 
-                  p 
-                    h4 There are no farmer ones registered yet
+                p 
+                  h4 There are no farmer ones registered yet
 
 
 
