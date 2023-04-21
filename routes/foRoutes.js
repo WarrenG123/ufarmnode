@@ -24,7 +24,11 @@ router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     // } else {
     //     res.redirect("/login");
     // }
-})
+});
+
+router.get("/ufupload"), (req, res) => {
+    res.render('ufUpload')
+};
 
 
 

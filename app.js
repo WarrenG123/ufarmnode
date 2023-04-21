@@ -13,11 +13,10 @@ const User = require("./models/userModel"); //for session to work fine
 const homeRoute = require("./routes/homeRoute");
 const prodRoute = require("./routes/products/prodRoute");
 const cartRoute = require("./routes/products/cartroute");
-const upRoute = require("./routes/products/uploadRoute");
 const fOneRegister = require("./routes/auth/foRegRoute");
 const uFregister = require("./routes/auth/uFRegRoutes");
-const signupRoutes = require("./routes/signupRoutes"); 
-const authRoutes = require("./routes/authRoutes"); 
+const signupRoutes = require("./routes/auth/signupRoutes"); 
+const authRoutes = require("./routes/auth/authRoutes"); 
 const aoRoutes = require("./routes/aoRoute"); 
 
 
@@ -61,13 +60,13 @@ app.set("view engine", "pug");
 app.set("views",[ path.join(__dirname, "views"), path.join(__dirname, "views/auth"), path.join(__dirname, "views/products"),  path.join(__dirname, "views/fOne")]);
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/uploads")));
 
 
 
 app.use(homeRoute);
 app.use(prodRoute);
 app.use(cartRoute);
-app.use(upRoute);
 app.use(fOneRegister);
 app.use(uFregister);
 app.use(signupRoutes);

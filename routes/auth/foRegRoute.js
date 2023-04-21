@@ -20,7 +20,7 @@ router.post("/fOneRegister", async (req, res) => {
                 if (error) {
                     throw error
                 };
-                req.flash('success', 'farmer one has been registered');
+                // req.flash('success', 'farmer one has been registered');
                 res.redirect("/aodash")
             })
         }
@@ -45,7 +45,7 @@ router.get("/edit_farmerOne/:id", async(req, res) => {
 router.post("/edit_farmerOne", async(req, res) => {
     try{
         await User.findOneAndUpdate({_id:req.query.id}, req.body);
-        req.flash('success', 'farmer one has been updated');
+        // req.flash('success', 'farmer one has been updated');
         res.redirect("/aodash");
     }
     catch(err) {
