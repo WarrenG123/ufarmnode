@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// const fOneSchema = require("../../models/registerFoModel");
-// const connectEnsureLogin = require("connect-ensure-login");
 const User = require("../../models/userModel");  
 const flash = require('connect-flash');
 

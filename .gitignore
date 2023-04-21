@@ -1,13 +1,7 @@
 node_modules
 tryRoute.js
-try.pug
-registerModel.js
-students.pug
-try_edit.pug
 ufDash.pug
-foDash.pug
 aoRoutes.js
-foRoutes.js
 ufRoutes.js
 package.json
 package-lock.json

@@ -8,10 +8,6 @@ const bodyParser = require("body-parser");
 const passport = require('passport');
 const session = require("express-session");
 const flash = require('connect-flash');
-
-
-
-
 const User = require("./models/userModel"); //for session to work fine
 
 const homeRoute = require("./routes/homeRoute");
@@ -22,11 +18,10 @@ const fOneRegister = require("./routes/auth/foRegRoute");
 const uFregister = require("./routes/auth/uFRegRoutes");
 const signupRoutes = require("./routes/signupRoutes"); 
 const authRoutes = require("./routes/authRoutes"); 
+const aoRoutes = require("./routes/aoRoute"); 
 
 
 //with steven 
-const tryRoute = require("./routes/tryRoute"); 
-const aoRoutes = require("./routes/aoRoute"); 
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
 
@@ -58,8 +53,7 @@ console.log("connected to db");
 })
 db.on("error", (err) => {
 console.error(err);
-})
-
+});
 
 
 
@@ -67,9 +61,6 @@ app.set("view engine", "pug");
 app.set("views",[ path.join(__dirname, "views"), path.join(__dirname, "views/auth"), path.join(__dirname, "views/products")]);
 
 app.use(express.static(path.join(__dirname, "public")));
-
-
-
 
 
 
@@ -84,8 +75,6 @@ app.use(authRoutes);
 app.use(aoRoutes);
 
 // work with steven
-app.use(tryRoute); 
-
 app.use(ufRoutes);
 app.use(foRoutes);
 
