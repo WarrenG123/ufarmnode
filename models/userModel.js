@@ -53,11 +53,10 @@ const userSchema = new mongoose.Schema({
         trim: true,
         default: null
     },
-    activities: {
+    activities: [{
         type: String,
-        trim: true,
         default: null
-    },
+    }],
     dreg: {
         type: String,
         trim: true,

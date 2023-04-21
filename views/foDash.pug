@@ -6,8 +6,8 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
   title Farmer One dashboard
-.container  
-  #mySidebar.w3-sidebar.w3-bar-block.w3-border-right
+// Sidebar
+#mySidebar.w3-sidebar.w3-bar-block.w3-border-right
   button.w3-bar-item.w3-large(onclick='w3_close()') Close &times;
   a.w3-bar-item.w3-button(href='#') Register Urban Farmer
   a.w3-bar-item.w3-button(href='#') Farmer produce
@@ -16,9 +16,7 @@ head
   a.w3-bar-item.w3-button(href='#') Logout
 .w3-green
   button.w3-button.w3-green.w3-xlarge(onclick='w3_open()') &#x2630;
-  div
-    h3 Dashboard
-
+.container  
   fieldset
     // Form Name
     legend
@@ -29,34 +27,31 @@ head
     .container
       h3    
       fieldset 
-        h5  
+        h3  
           | List of Urban Farmers in Ward #{farmerWard}
           br
           br
           | Number of Urban Farmers in ward #{farmerWard}: #{activeFarmers}
           br
-        table.table 
-            thead.thead-dark
-                tr
+        table.table.table-striped.table-hover.table-bordered
+            thead
+                tr.table-primary
                     th(scope='col') Name
                     th(scope='col') Unique ID
                     th(scope='col') Dob
                     th(scope='col') Gender
                     th(scope='col') Phone number
-                    th(scope='col') Address
                     th(scope='col') Ward
-                    th(scope='col') Action
                     th(scope='col') Action
             tbody
             if urbanFarmers.length 
                 each urbanFarmer in urbanFarmers
                     tr
                         td #{urbanFarmer.firstname} #{urbanFarmer.lastname}
-                        td #{urbanFarmer.username}
+                        td #{urbanFarmer.uniqueid}
                         td #{urbanFarmer.dob}
                         td #{urbanFarmer.gender}
                         td #{urbanFarmer.phonenumber}
-                        td #{urbanFarmer.address}
                         td #{urbanFarmer.ward}
                         td 
                         //- td        
@@ -73,6 +68,4 @@ script(src='/bootstrap/js/bootstrap.js')
 script(src='/bootstrap/js/bootstrap.bundle.js')
 script(src='/includes/custom.js')
 script(src='/includes/sidebar.js')
-
-
 

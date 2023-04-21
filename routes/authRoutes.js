@@ -25,7 +25,6 @@ router.post("/login", passport.authenticate("local", { failureRedirect: "/login"
      else if(req.user.role == "cus" && userExist){
         res.redirect("/");
     }
-    // else {res.redirect("/fodash")};
     else {res.send("You are not registered")};
 })
 

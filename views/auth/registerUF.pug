@@ -59,10 +59,10 @@ div(w3-include-html='/includes/navbar.html')
             .form-group
               label Gender:
               label.form-check.form-check-inline
-                input#male.form-check-input(type='radio' name='gender')
+                input#male.form-check-input(type='radio' name='gender' value="male")
                 span Male
               label.form-check.form-check-inline
-                input#female.form-check-input(type='radio' name='gender')
+                input#female.form-check-input(type='radio' name='gender' value='female')
                 span Female
               small#gndErr
             fieldset
@@ -91,13 +91,13 @@ div(w3-include-html='/includes/navbar.html')
               .form-group
                 label Activities carried out:
                 label.form-check
-                  input#poultry.form-check-input(type='checkbox' name='poultry' value='Poultry Farming')
+                  input#poultry.form-check-input(type='checkbox' name='activities' value='Poultry Farming')
                   span Poultry Farming
                 label.form-check
-                  input#hort.form-check-input(type='checkbox' name='horticulture' value='Horticulture')
+                  input#hort.form-check-input(type='checkbox' name='activities' value='Horticulture')
                   span Horticulture
                 label.form-check
-                  input#dairy.form-check-input(type='checkbox' name='dairy' value='Dairy farming')
+                  input#dairy.form-check-input(type='checkbox' name='activities' value='Dairy farming')
                   span Dairy Farming
                 small#actErr
             fieldset

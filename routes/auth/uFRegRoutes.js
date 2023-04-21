@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../../models/userModel");
 const flash = require('connect-flash');
 
 router.get("/uFarmerRegister", (req, res) => {

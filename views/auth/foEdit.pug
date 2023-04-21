@@ -66,10 +66,10 @@ div(w3-include-html='/includes/navbar.html')
               .form-group
                 label Gender:
                 label.form-check.form-check-inline
-                  input#male.form-check-input(type='radio' name='gender' value='male' )
+                  input#male.form-check-input(type='radio' name='gender' value='male' farmerOne.gender= 'male' ? checked : '')
                   span Male
                 label.form-check.form-check-inline
-                  input#female.form-check-input(type='radio' name='gender' value='female' )
+                  input#female.form-check-input(type='radio' name='gender' value='female' farmerOne.gender= 'female' ? checked : '')
                   span Female
                 small#gndErr
             fieldset
@@ -88,7 +88,7 @@ div(w3-include-html='/includes/navbar.html')
                 small#adrErr
               .form-group
                 label Residence type:
-                 select#rT.form-control(name='residence' disabled)
+                 select#rT.form-control(name='residence')
                   option(value='') (Select residence type)
                   option(value='permanent' ) permanent
                   option(value='temporary') temporary
