@@ -10,6 +10,9 @@ let storage = multer.diskStorage({
     filename: (req, file, cb) => { cb(null, file.originalname) }
 });
 let imageUpload = multer({ storage: storage });
+router.get("/ufdash", (req, res) => {
+    res.render("ufDash")
+});
 //to get upload form
 router.get("/upload", (req, res) => {
     res.render("upload")

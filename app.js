@@ -17,10 +17,7 @@ const fOneRegister = require("./routes/auth/foRegRoute");
 const uFregister = require("./routes/auth/uFRegRoutes");
 const signupRoutes = require("./routes/auth/signupRoutes"); 
 const authRoutes = require("./routes/auth/authRoutes"); 
-const aoRoutes = require("./routes/aoRoute"); 
-
-
-//with steven 
+const aoRoutes = require("./routes/aoRoute");  
 const ufRoutes = require("./routes/ufRoutes"); 
 const foRoutes = require("./routes/foRoutes"); 
 
@@ -72,8 +69,6 @@ app.use(uFregister);
 app.use(signupRoutes);
 app.use(authRoutes);
 app.use(aoRoutes);
-
-// work with steven
 app.use(ufRoutes);
 app.use(foRoutes);
 

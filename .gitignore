@@ -1,6 +1,4 @@
 node_modules
-tryRoute.js
 package.json
 package-lock.json
-practiceroute.js
-practice.pug
+.vscode

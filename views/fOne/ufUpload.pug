@@ -28,26 +28,24 @@ head
             thead
                 tr.table-primary
                     th(scope='col') Name
-                    th(scope='col') Unique ID
-                    th(scope='col') Dob
-                    th(scope='col') Gender
-                    th(scope='col') Phone number
-                    th(scope='col') Ward
+                    th(scope='col') Price
+                    th(scope='col') Quantity
+                    th(scope='col') Type
+                    th(scope='col') Status
                     th(scope='col') Action
             tbody
-            if urbanFarmers.length 
-                each urbanFarmer in urbanFarmers
+            if data.length 
+                each product in data
                     tr
-                        td #{urbanFarmer.firstname} #{urbanFarmer.lastname}
-                        td #{urbanFarmer.uniqueid}
-                        td #{urbanFarmer.dob}
-                        td #{urbanFarmer.gender}
-                        td #{urbanFarmer.phonenumber}
-                        td #{urbanFarmer.ward}
+                        td img(src=product.productimage,alt='image to be uploaded') #{product.productname}
+                        td #{product.unitprice}
+                        td #{product.quantity}
+                        td #{product.pType}
+                        td #{product.status}
                         td 
             else 
                 p 
-                  h4 There are no Urban Farmers registered yet
+                  h4 There are no products for approval
 form(method="POST" action='/logout')
    button.btn(type= 'submit' width='100px') Signout
 
