@@ -20,7 +20,7 @@ router.post("/uFarmerRegister", async (req, res) => {
                 if (error) {
                     throw error
                 };
-                req.flash('success', ' Urban farmer has been registered');
+                // req.flash('success', ' Urban farmer has been registered');
                 res.redirect("/fodash")
             })
         }

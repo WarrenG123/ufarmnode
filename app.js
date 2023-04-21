@@ -58,7 +58,7 @@ console.error(err);
 
 
 app.set("view engine", "pug");
-app.set("views",[ path.join(__dirname, "views"), path.join(__dirname, "views/auth"), path.join(__dirname, "views/products")]);
+app.set("views",[ path.join(__dirname, "views"), path.join(__dirname, "views/auth"), path.join(__dirname, "views/products"),  path.join(__dirname, "views/fOne")]);
 
 app.use(express.static(path.join(__dirname, "public")));
 

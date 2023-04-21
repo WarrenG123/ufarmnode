@@ -63,15 +63,15 @@ div(w3-include-html='/includes/navbar.html')
                 label Date of birth:
                 input#db.form-control(type='date' name='dob' value=farmerOne.dob disabled)
                 small#dbErr
-              .form-group
-                label Gender:
-                label.form-check.form-check-inline
-                  input#male.form-check-input(type='radio' name='gender' value='male' farmerOne.gender= 'male' ? checked : '')
-                  span Male
-                label.form-check.form-check-inline
-                  input#female.form-check-input(type='radio' name='gender' value='female' farmerOne.gender= 'female' ? checked : '')
-                  span Female
-                small#gndErr
+              //- .form-group
+              //-   label Gender:
+              //-   label.form-check.form-check-inline
+              //-     input#male.form-check-input(type='radio' name='gender' value='male' farmerOne.gender= 'male' ? checked : '')
+              //-     span Male
+              //-   label.form-check.form-check-inline
+              //-     input#female.form-check-input(type='radio' name='gender' value='female' farmerOne.gender= 'female' ? checked : '')
+              //-     span Female
+              //-   small#gndErr
             fieldset
               legend Other
               .form-group
@@ -86,13 +86,13 @@ div(w3-include-html='/includes/navbar.html')
                 label Address
                 input#adr.form-control(type='text' name='address' value=farmerOne.address disabled)
                 small#adrErr
-              .form-group
-                label Residence type:
-                 select#rT.form-control(name='residence')
-                  option(value='') (Select residence type)
-                  option(value='permanent' ) permanent
-                  option(value='temporary') temporary
-                small#rTErr
+              //- .form-group
+              //-   label Residence type:
+              //-    select#rT.form-control(name='residence')
+              //-     option(value='') (Select residence type)
+              //-     option(value='permanent' ) permanent
+              //-     option(value='temporary') temporary
+              //-   small#rTErr
               .form-group
                 label Years spent in the area:
                 input#tsa.form-control(type='number' name='time' value=farmerOne.time disabled)
@@ -101,15 +101,15 @@ div(w3-include-html='/includes/navbar.html')
                 label Date of registration:
                 input#dr.form-control(type='date' name='dreg' value=farmerOne.dreg disabled)
                 small#drErr
-              .form-group
-                label Ward:
-                select#wd.form-control(name='ward' disabled)
-                  option(value='') (Select ward)
-                  option(value='1') 1
-                  option(value='2') 2
-                  option(value='3') 3
-                  option(value='4') 4
-                small#wdErr
+              //- .form-group
+              //-   label Ward:
+              //-   select#wd.form-control(name='ward')
+              //-     option(value='') (Select ward)
+              //-     option(value='1') 1
+              //-     option(value='2') 2
+              //-     option(value='3') 3
+              //-     option(value='4') 4
+              //-   small#wdErr
               .form-group
                 label Activities carried out:
                 label.form-check
