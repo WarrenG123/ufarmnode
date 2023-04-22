@@ -29,21 +29,28 @@ div(w3-include-html='/includes/navbar.html')
       article
         header
           h4 Cart
-        .row
-          .col-4
-            | image
-          .col-4
-            | name
-          .col-4
-            | quantity
-          .col-4
-            | price
+        table.table.table-striped.table-hover
+          thead
+            tr.table-primary
+              th(scope='col') #
+              th(scope='col') Product
+              th(scope='col') Quantity
+              th(scope='col') Cost
+          tbody
+            tr
+              th(scope='row') 1
+              td
+                img(src='item-image.jpg' alt='Item image')
+              td
+                input#quantity(type='number'  oninput='calcTotal()')
+              td
+                input#cost(type='number'  oninput='calcTotal()')
     .col-4
       article.summary
         h4 Cart summary
         form.form-inline(action='#' method='post')
           label Total:
-          input#total.form-control(type='text' name='total' placeholder='UGX 0000')
+          input#total.form-control( type='number' name='total' placeholder='UGX 0000')
           small#tlErr
           .checkbutton
             button#checkout.btn.btn-success CHECKOUT
@@ -52,4 +59,4 @@ div(w3-include-html='/includes/footer.html')
 // footer ends here
 script(src='/includes/custom.js')
 script(src='/bootstrap/js/bootstrap.js')
-script(src='/bootstrap/js/bootstrap.bundle.js')
+script(src='/includes/total.js')
