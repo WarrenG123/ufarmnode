@@ -37,7 +37,9 @@ head
             if data.length 
                 each product in data
                     tr
-                        td img(src=product.productimage,alt='image to be uploaded') #{product.productname}
+                        td 
+                          img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
+                          h3 #{product.productname}
                         td #{product.unitprice}
                         td #{product.quantity}
                         td #{product.pType}
@@ -56,3 +58,4 @@ script(src='/bootstrap/js/bootstrap.bundle.js')
 script(src='/includes/custom.js')
 script(src='/includes/sidebar.js')
 
+//

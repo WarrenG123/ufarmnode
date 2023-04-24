@@ -19,18 +19,17 @@ router.get("/upload", (req, res) => {
 });
 
 router.post("/upload", imageUpload.single("productimage"), (req, res) => {
-    // console.log(req.file);
     try {
         console.log(req.body);
         const upload = new Upload(req.body);
         upload.productimage = req.file.originalname
         upload.save();
+        req.flash('success', 'product has been uploaded');
         res.redirect("/ufdash");
     }
     catch (error) {
         res.send("failed to display image ${error} ")
     }
-    //res.render("aoDash");
 })
 
 

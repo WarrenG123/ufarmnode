@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../models/userModel");
-const connectEnsureLogin = require("connect-ensure-login");
 const Upload = require("../models/productModel");
+const connectEnsureLogin = require("connect-ensure-login");
 
 
-router.get("/ufupload"), async(req, res) => {
+router.get("/ufupload", async(req, res) => {
     try{
         const upload = await Upload.find();
         console.log(upload);
@@ -15,11 +15,7 @@ router.get("/ufupload"), async(req, res) => {
         res.send("Failed to retrieve uploads")
     }
    
-};
-
-
-
-
+});
 
 router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     let farmerWard = req.user["ward"];
