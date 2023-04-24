@@ -8,7 +8,7 @@ const connectEnsureLogin = require("connect-ensure-login");
 router.get("/ufupload", async(req, res) => {
     try{
         const upload = await Upload.find();
-        console.log(upload);
+        // console.log(upload);
         res.render('ufUpload', {data:upload});
     }
     catch (err) {

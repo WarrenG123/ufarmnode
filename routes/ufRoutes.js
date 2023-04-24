@@ -3,6 +3,8 @@ const router = express.Router();
 const connectEnsureLogin = require("connect-ensure-login");
 const Upload = require("../models/productModel");
 const multer = require("multer");
+const flash = require('connect-flash');
+
 
 //, connectEnsureLogin.ensureLoggedIn()
 let storage = multer.diskStorage({

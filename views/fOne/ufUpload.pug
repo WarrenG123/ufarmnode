@@ -28,7 +28,8 @@ head
             thead
                 tr.table-primary
                     th(scope='col') Name
-                    th(scope='col') Price
+                    th(scope='col') Ward
+                    th(scope='col') Price in Ugx
                     th(scope='col') Quantity
                     th(scope='col') Type
                     th(scope='col') Status
@@ -40,11 +41,13 @@ head
                         td 
                           img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
                           h3 #{product.productname}
+                        td #{product.ward}
                         td #{product.unitprice}
                         td #{product.quantity}
                         td #{product.pType}
                         td #{product.status}
                         td 
+                          a.btn.btn-dark.btn-block(href='#') Edit
             else 
                 p 
                   h4 There are no products for approval

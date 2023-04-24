@@ -40,19 +40,20 @@ div(w3-include-html='/includes/navbar.html')
     .row
       h4 Diary products
       h5 See all
-
-      .col-3
-        .card
-          .card-body
-            img.card-img-top(src='/image/milk.jpg' alt='milk')
-            p.card.text
-              | Milk 
+  if data.length 
+            each upload in data
+        .col-3
+          .card
+            .card-body
+              img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
+               p.card.text
+              | #{product.productname}
               br
-              |                 organic || Farmer: Mike 
+              |                 #{product.pType}|| Farmer: Mike 
               br
               |                 UGX 2500 @bottle
-            button.btn.btn-primary.btn-sm(type='button' ) Buy
-            button.btn.btn-success.btn-sm.callbutton(type='button')
+              button.btn.btn-primary.btn-sm(type='button' ) Buy
+              button.btn.btn-success.btn-sm.callbutton(type='button')
               i.bi.bi-telephone
               | call
   //-     .col-3

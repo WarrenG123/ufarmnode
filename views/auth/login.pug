@@ -49,6 +49,8 @@ div(w3-include-html='/includes/navbar.html')
 .image
   .container-fluid
     .row.justify-content-center
+      if message
+              .alert.alert-success= message
       .col-md-4
         .card-container
           .card

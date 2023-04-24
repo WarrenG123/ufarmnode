@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../../models/userModel");  
+const flash = require('connect-flash');
+
  
 router.get("/signup", (req, res) => {
     res.render("signup");
@@ -19,6 +21,7 @@ router.post("/signup", async (req, res) => {
                 if (error) {
                     throw error
                 };
+                req.flash('success', 'You have been registered');
                 res.redirect("login");
             })
         }

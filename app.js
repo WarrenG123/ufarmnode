@@ -70,7 +70,7 @@ app.use(signupRoutes);
 app.use(authRoutes);
 app.use(aoRoutes);
 app.use(ufRoutes);
-app.use("/",foRoutes);
+app.use(foRoutes);
 
 
 
