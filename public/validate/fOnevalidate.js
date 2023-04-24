@@ -3,7 +3,9 @@ const validate = (event) => {
     //pick input
     let firstName = document.getElementById("fName");
     let secondName = document.getElementById("sName");
-    let birthDate = document.getElementById("db");
+    let birthDate = new Date(document.getElementById("dob").value);
+    let age = calculateAge(birthDate);
+    let bDate = document.getElementById("db");
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let phoneNumber = document.getElementById("pNum");
@@ -80,11 +82,24 @@ const validate = (event) => {
         secondNameError.textContent = "";
     }
     // DOB
-    if (!birthDate.value) {
-        birthDate.style.border = "1px solid red";
+    if (!bDate.value) {
+        bDate.style.border = "1px solid red";
         birthDateError.textContent = "Please fill in this field";
         birthDateError.style = "color: red";
         error++;
+    }else {
+        bDate.style.border = "1px solid green";
+        birthDateError.textContent = "";
+    }
+    
+    if (isNaN(age) || age < 10) {
+        bDate.style.border = "1px solid red";
+        birthDateError.textContent = "Please enter a valid date of birth (must be at least 10 years old)";
+        birthDateError.style.color = "red";
+        error++;
+    } else {
+        bDate.style.border = "1px solid green";
+        birthDateError.textContent = "";
     }
     // gender
     if (!(female.checked || male.checked)) {
@@ -248,3 +263,15 @@ const validate = (event) => {
         event.preventDefault();
     }
 }
+
+
+function calculateAge(birthDate) {
+    let today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+calculateAge(birthDate)

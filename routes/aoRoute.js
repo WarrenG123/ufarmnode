@@ -13,6 +13,7 @@ router.get("/aodash",  async(req, res)=>{
             res.render("aoDash", {
                 data: data,
                 activeFarmers,
+                message: req.flash('success') 
             })
         } catch (error) { 
             res.status(400).send("Could not find farmers in the database");

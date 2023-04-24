@@ -28,6 +28,8 @@ head
       fieldset 
         h3  
          | Number of Farmer Ones: #{activeFarmers}
+         if message
+            .alert.alert-success= message
         br
         h3 Registered Farmer ones  
           table.table.table-striped.table-hover.table-bordered

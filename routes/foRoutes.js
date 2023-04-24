@@ -5,6 +5,22 @@ const connectEnsureLogin = require("connect-ensure-login");
 const Upload = require("../models/productModel");
 
 
+router.get("/ufupload"), async(req, res) => {
+    try{
+        const upload = await Upload.find();
+        console.log(upload);
+        res.render('ufUpload', {data:upload});
+    }
+    catch (err) {
+        res.send("Failed to retrieve uploads")
+    }
+   
+};
+
+
+
+
+
 router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     let farmerWard = req.user["ward"];
     console.log("The farmer ward is:", farmerWard);
@@ -27,17 +43,7 @@ router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     // }
 });
 
-router.get("/ufupload"), async(req, res) => {
-    try{
-        const upload = await Upload.find();
-        console.log(upload);
-        res.render('ufUpload', {data:upload});
-    }
-    catch (err) {
-        res.send("Failed to retrieve uploads")
-    }
-   
-};
+
 
 
 

@@ -3,7 +3,9 @@ const validate = (event) => {
     //pick input
     let firstName = document.getElementById("fN");
     let secondname = document.getElementById("lN");
-    let birthDate = document.getElementById("dob");  //need to validate age
+    let birthDate = new Date(document.getElementById("dob").value);
+    let age = calculateAge(birthDate);
+    let bDate = document.getElementById("dob");  //need to validate age
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let phoneNumber = document.getElementById("pNum");
@@ -63,15 +65,26 @@ const validate = (event) => {
         secondnameError.textContent = "";
     }
     // DOB
-    if (!birthDate.value) {
-        birthDate.style.border = "1px solid red";
+    if (!bDate.value) {
+        bDate.style.border = "1px solid red";
         birthDateError.textContent = "Please fill in this field";
         birthDateError.style = "color: red";
         error++;
     }else {
-        birthDate.style.border = "1px solid green";
+        bDate.style.border = "1px solid green";
         birthDateError.textContent = "";
     }
+    
+    if (isNaN(age) || age < 10) {
+        bDate.style.border = "1px solid red";
+        birthDateError.textContent = "Please enter a valid date of birth (must be at least 10 years old)";
+        birthDateError.style.color = "red";
+        error++;
+    } else {
+        bDate.style.border = "1px solid green";
+        birthDateError.textContent = "";
+    }
+
     // gender
     if (!(female.checked || male.checked)) {
         genderError.innerHTML = "Pick your gender";
@@ -132,3 +145,16 @@ const validate = (event) => {
         event.preventDefault();
     }
 };
+
+
+
+function calculateAge(birthDate) {
+    let today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+calculateAge(birthDate)
