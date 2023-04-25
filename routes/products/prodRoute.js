@@ -7,7 +7,7 @@ router.get("/products", async(req, res) => {
     try{
         let upload = await Upload.find({status:"approved"})
          res.render("product",{
-            data:upload
+           products:upload
          })
         }
     catch(error) {

@@ -1,8 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const Upload = require("../../models/productModel")
 
-router.get("/cart", (req, res) => {
-    res.render("cart")
+router.get("/cart", async(req, res) => {
+    try{
+        const product = await Upload.find()
+        res.render("cart",{
+            data:product
+        })
+    }
+    catch (error) {
+
+    }
 });
 
 module.exports = router;

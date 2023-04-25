@@ -11,13 +11,12 @@ head
   button.w3-bar-item.w3-large(onclick='w3_close()') Close &times;
   a.w3-bar-item.w3-button(href='fOneRegister') Register new Farmer one
   a.w3-bar-item.w3-button(href='#') Messages
-  a.w3-bar-item.w3-button(href='#') Log out
+  a.w3-bar-item.w3-button(href='/logout') Log out
 .w3-green
   button.w3-button.w3-green.w3-xlarge(onclick='w3_open()') &#x2630;
 //data
 .container-fluid
   fieldset
-    // Form Name
     legend
       center
         h2
@@ -61,7 +60,7 @@ head
                 p 
                   h4 There are no farmer ones registered yet
 form(method="POST" action='/logout')
-    button.btn.btn-success(type= 'submit' width='100px') Sign out
+    button.btn.btn-success(type= 'submit' width='100px') log out
 
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 script(src='/bootstrap/js/bootstrap.js')
