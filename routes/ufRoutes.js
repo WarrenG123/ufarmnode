@@ -6,12 +6,12 @@ const multer = require("multer");
 const flash = require('connect-flash');
 
 
-//, connectEnsureLogin.ensureLoggedIn()
 let storage = multer.diskStorage({
     destination: (req, file, cb) => { cb(null, "public/uploads") },
     filename: (req, file, cb) => { cb(null, file.originalname) }
 });
 let imageUpload = multer({ storage: storage });
+//, connectEnsureLogin.ensureLoggedIn()
 router.get("/ufdash", (req, res) => {
     res.render("ufDash")
 });

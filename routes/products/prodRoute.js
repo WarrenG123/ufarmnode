@@ -1,9 +1,18 @@
 const express = require('express');
+const Upload = require("../../models/productModel");
 const router = express.Router();
 
 
-router.get("/products", (req, res) => {
-    res.render("product")
+router.get("/products", async(req, res) => {
+    try{
+        let upload = await Upload.find({status:"approved"})
+         res.render("product",{
+            data:upload
+         })
+        }
+    catch(error) {
+        res.status(400).send("Could not find products in the database");
+    }
 });
 
 module.exports = router;

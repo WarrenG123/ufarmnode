@@ -40,22 +40,25 @@ div(w3-include-html='/includes/navbar.html')
     .row
       h4 Diary products
       h5 See all
-  if data.length 
-            each upload in data
-        .col-3
-          .card
-            .card-body
-              img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
-               p.card.text
-              | #{product.productname}
-              br
-              |                 #{product.pType}|| Farmer: Mike 
-              br
-              |                 UGX 2500 @bottle
-              button.btn.btn-primary.btn-sm(type='button' ) Buy
-              button.btn.btn-success.btn-sm.callbutton(type='button')
-              i.bi.bi-telephone
-              | call
+      if data.length 
+          each product in data
+            .col-3
+              .card
+                .card-body
+                  img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
+                  p.card.text
+                  | #{product.productname}
+                  br
+                  |                 #{product.pType}|| Farmer: Mike 
+                  br
+                  |                 UGX 2500 @bottle
+                  button.btn.btn-primary.btn-sm(type='button' ) Buy
+                  button.btn.btn-success.btn-sm.callbutton(type='button')
+                  i.bi.bi-telephone
+                      | call
+      else 
+                    p 
+                      h4 There are no products yet, check again in a few minutes
   //-     .col-3
   //-       .card
   //-         .card-body

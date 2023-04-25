@@ -3,6 +3,7 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
   link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
   style.
@@ -31,9 +32,16 @@ head
     color: rgb(15, 15, 15);
     }
   title RegisterUF
-// nav starts Here
-div(w3-include-html='/includes/navbar.html')
-// nav bar ends here
+// Sidebar
+#mySidebar.w3-sidebar.w3-bar-block.w3-border-right
+  button.w3-bar-item.w3-large(onclick='w3_close()') Close &times;
+  a.w3-bar-item.w3-button(href='/uFarmerRegister') Register Urban Farmer
+  a.w3-bar-item.w3-button(href='/ufupload') Farmer produce
+  a.w3-bar-item.w3-button(href='#') Bookings and orders
+  a.w3-bar-item.w3-button(href='#') Messages
+  a.w3-bar-item.w3-button(href='/fodash') back
+.w3-green
+  button.w3-button.w3-green.w3-xlarge(onclick='w3_open()') &#x2630;
 .image
   .row.justify-content-center
     .col-md-6
@@ -128,3 +136,4 @@ div(w3-include-html='/includes/navbar.html')
 script(src='/bootstrap/js/bootstrap.js')
 script(src='/validate/uFarmerValidate.js')
 script(src='/includes/custom.js')
+script(src='/includes/sidebar.js')
