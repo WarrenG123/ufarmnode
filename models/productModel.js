@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const uploadSchema = new mongoose.Schema({
+    fName: {
+        type: String
+    },
     productimage: {
         type: String
     },

@@ -2,6 +2,7 @@ const validate = (event) =>{
     let error = 0
     //pick input
     let image = document.getElementById("pImage");
+    let fName = document.getElementById("fName");
     let product = document.getElementById("pName");
     let ward = document.getElementById("ward");
     let date = document.getElementById("date");
@@ -17,6 +18,7 @@ const validate = (event) =>{
 
     //pick error
     let imageErr = document.getElementById("imgErr");
+    let nameError = document.getElementById("fNameErr");
     let productError = document.getElementById("pNameErr");
     let wardError = document.getElementById("wdErr");
     let dateError = document.getElementById("dateErr");
@@ -35,6 +37,15 @@ const validate = (event) =>{
     }else {
         image.style.border = "1px solid green";
         imageErr.textContent = "";
+    }
+    if(!fName.value) {
+        fName.style.border = "1px solid red"
+        nameError.textContent = "Enter the product name"
+        nameError.style = "color: red"
+        error++
+    }else {
+        fName.style.border = "1px solid green";
+        nameError.textContent = "";
     }
     if(!product.value) {
         product.style.border = "1px solid red"
