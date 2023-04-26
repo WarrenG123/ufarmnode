@@ -9,7 +9,7 @@ const flash = require('connect-flash');
 router.get("/ufupload", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
     let farmerWard = req.user["ward"];
     try{
-        const upload = await Upload.find({ward: farmerWard});
+        const upload = await Upload.find({ward: farmerWard, status:"pending"});
         res.render('ufUpload', {data:upload});
     }
     catch (err) {
@@ -28,10 +28,10 @@ router.get("/approval/:id", async(req, res) => {
     }
 })
 
-router.post("/approval/", async(req, res) => {
+router.post("/approval/:id", async(req, res) => {
     try{
         await Upload.findOneAndUpdate({_id:req.query.id}, req.body);
-        req.flash('success', 'Product status updated');
+        req.flash('info', 'Product status updated');
         res.redirect("/fodash");
     }
     catch(err) {

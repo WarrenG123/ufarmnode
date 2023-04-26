@@ -157,4 +157,3 @@ function calculateAge(birthDate) {
     }
     return age;
 }
-calculateAge(birthDate)

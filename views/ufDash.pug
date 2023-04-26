@@ -20,10 +20,13 @@ head
       center
         h2
           b Urban Farmer Dashboard
-  br
-  if message
-        .alert.alert-success= message
-  
+    .container
+      h3    
+      fieldset 
+        h3  
+         if message
+            .alert.alert-info= message
+            
   form(method="POST" action='/logout')
     button.btn(type= 'submit' width='100px') Signout
 
