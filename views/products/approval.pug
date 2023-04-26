@@ -1,0 +1,71 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
+  title Upload approval
+  style.
+    .row{
+    padding-top: 20px;
+    }
+    .card {
+    margin-bottom: 20px;
+    }
+    .button{
+    margin-top: 10px;
+    }
+    .image {
+    background-image: url("/image/farmland.jpg");
+    background-color: #cccccc;    /* Used if the image is unavailable */
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+    .form-group{
+      background-color: azure;
+    }
+.image
+  .container-fluid
+    .row.justify-content-center
+      .col-md-7
+        .card
+          .card.header
+            h5 APPROVE PRODUCT
+          .card-body
+            form#upload(action='/approval/:id='+product._id  onsubmit='validate(event)' method='post' enctype="multipart/form-data")
+              .form.form-group
+                label  Name
+                input#fName.form-control(type='text' name='fname' value=product.fName disabled)
+                small#fNameErr
+              .form.form-group
+                label Product name
+                input#pName.form-control(type='text' name='productname' value=product.productname disabled)
+                small#pNameErr
+              .form.form-group
+                label Unit price (in UGX)
+                input#uP.form-control(type='text' placeholder='UGX' name='unitprice' value=product.unitprice disabled)
+                small#uPErr
+              .form.form-group
+                label Quantity
+                input#qty.form-control(type='text' name='quantity' disabled value=product.quantity)
+                small#qtyErr
+              .form.form-group
+                label Status: 
+                label.form-check.form-check-inline 
+                  input#yes.form-check-input(type='radio' name='status' value='Approved' )
+                  span Approved
+                label.form-check.form-check-inline
+                  input#no.form-check-input(type='radio' name='status' value='Declined' )
+                  span Declined
+              .button
+                button#submit.btn-primary Submit
+// footer starts here
+div(w3-include-html='/includes/footer.html')
+// footer ends here
+script(src='/bootstrap/js/bootstrap.js')
+script(src='/validate/uploadValidate.js')
+script(src='/includes/custom.js')
+script(src='/includes/sidebar.js')

@@ -40,7 +40,6 @@ const uploadSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        trim: true,
         default:'pending'
     }
 })

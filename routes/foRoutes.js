@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/userModel");
 const Upload = require("../models/productModel");
 const connectEnsureLogin = require("connect-ensure-login");
+const flash = require('connect-flash');
 
 
 router.get("/ufupload", connectEnsureLogin.ensureLoggedIn(), async(req, res) => {
@@ -16,6 +17,28 @@ router.get("/ufupload", connectEnsureLogin.ensureLoggedIn(), async(req, res) => 
     }
    
 });
+router.get("/approval/:id", async(req, res) => {
+    try{
+        const data = await Upload.findOne({_id:req.params.id});
+        res.render("approval", {product:data});
+    }
+    catch(err) {
+        res.send("could not find upload");
+        console.log(err);
+    }
+})
+
+router.post("/approval/", async(req, res) => {
+    try{
+        await Upload.findOneAndUpdate({_id:req.query.id}, req.body);
+        req.flash('success', 'Product status updated');
+        res.redirect("/fodash");
+    }
+    catch(err) {
+        res.send("Failed to update status");
+        console.log(err);
+    }
+})
 
 router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     let farmerWard = req.user["ward"];

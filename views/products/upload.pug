@@ -20,15 +20,10 @@ head
     .image {
     background-image: url("/image/farmland.jpg");
     /* The image used */
-    background-color: #cccccc;
-    /* Used if the image is unavailable */
-    /* You must set a specified height */
+    background-color: #cccccc; /* Used if the image is unavailable */
     background-position: relative;
-    /* Center the image */
     background-repeat: no-repeat;
-    /* Do not repeat the image */
     background-size: cover;
-    /* Resize the background image to cover the entire container */
     background-attachment: fixed;
     }
     .form-group{
@@ -51,14 +46,14 @@ head
           .card.header
             h5 UPLOAD HERE
           .card-body
-            form#upload(action='#' name='upload form' onsubmit='validate(event)' method='post' enctype="multipart/form-data")
+            form#upload(action='/upload' name='upload form' onsubmit='validate(event)' method='post' enctype="multipart/form-data")
               .form.form-group
                 label Product image
                 input#pImage.form-control(type='file' name='productimage')
                 small#imgErr
               .form.form-group
                 label  Name
-                input#fName.form-control(type='text' name='fname')
+                input#fName.form-control(type='text' name='fName' placeholder='Enter your name')
                 small#fNameErr
               .form.form-group
                 label Product name
@@ -119,10 +114,10 @@ head
               //- .form.form-group
               //-   label Status: 
               //-   label.form-check.form-check-inline 
-              //-     input#yes.form-check-input(type='hidden' name='status' value='Approved' disabled)
+              //-     input#yes.form-check-input(type='hidden' name='status' value='Approved' )
               //-     span Approved
               //-   label.form-check.form-check-inline
-              //-     input#no.form-check-input(type='hidden' name='status' value='Declined' disabled)
+              //-     input#no.form-check-input(type='hidden' name='status' value='Declined' )
               //-     span Declined
               .button
                 button#submit.btn-primary Submit

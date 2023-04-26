@@ -28,6 +28,7 @@ head
             thead
                 tr.table-primary
                     th(scope='col') Name
+                    th(scope='col') product
                     th(scope='col') Ward
                     th(scope='col') Price in Ugx
                     th(scope='col') Quantity
@@ -38,8 +39,9 @@ head
             if data.length 
                 each product in data
                     tr
+                        td #{product.fName}
                         td 
-                          img(src=product.productimage,alt='image to be uploaded', style='max-width:250px; height:auto;')
+                          img(src=product.productimage,alt='image to be uploaded', style='max-width:200px; height:auto;')
                           h3 #{product.productname}
                         td #{product.ward}
                         td #{product.unitprice}
@@ -47,7 +49,7 @@ head
                         td #{product.pType}
                         td #{product.status}
                         td 
-                          a.btn.btn-dark.btn-block(href='#') Edit
+                          a.btn.btn-dark.btn-block(href='/approval/'+product._id) Edit
             else 
                 p 
                   h4 There are no products for approval
