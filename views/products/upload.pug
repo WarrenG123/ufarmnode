@@ -111,14 +111,14 @@ head
                   input#nOrg.form-check-input(type='radio' name='pType' value='Non-organic')
                   span Non-organic
                 small#typeErr
-              //- .form.form-group
-              //-   label Status: 
-              //-   label.form-check.form-check-inline 
-              //-     input#yes.form-check-input(type='hidden' name='status' value='Approved' )
-              //-     span Approved
-              //-   label.form-check.form-check-inline
-              //-     input#no.form-check-input(type='hidden' name='status' value='Declined' )
-              //-     span Declined
+              .form.form-group
+                label Status: 
+                label.form-check.form-check-inline 
+                  input#yes.form-check-input(type='radio' name='status' value='Approved' disabled)
+                  span Approved
+                label.form-check.form-check-inline
+                  input#no.form-check-input(type='radio' name='status' value='Declined' disabled )
+                  span Declined
               .button
                 button#submit.btn-primary Submit
 // footer starts here

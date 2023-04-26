@@ -35,7 +35,7 @@ head
           .card.header
             h5 APPROVE PRODUCT
           .card-body
-            form#upload(action='/approval/:id='+product._id  onsubmit='validate(event)' method='post' enctype="multipart/form-data")
+            form#upload(action='/approval?id='+product._id  onsubmit='validate(event)' method='post' enctype="multipart/form-data")
               .form.form-group
                 label  Name
                 input#fName.form-control(type='text' name='fname' value=product.fName disabled)
@@ -50,16 +50,15 @@ head
                 small#uPErr
               .form.form-group
                 label Quantity
-                input#qty.form-control(type='text' name='quantity' disabled value=product.quantity)
+                input#qty.form-control(type='text' name='quantity' value=product.quantity)
                 small#qtyErr
+             
               .form.form-group
                 label Status: 
-                label.form-check.form-check-inline 
-                  input#yes.form-check-input(type='radio' name='status' value='Approved' )
-                  span Approved
-                label.form-check.form-check-inline
-                  input#no.form-check-input(type='radio' name='status' value='Declined' )
-                  span Declined
+                select#option.form-control(name='status')
+                  option(value='') (Select)
+                  option(value='Approved' name='status') Approved
+                  option(value='Declined' name='status') Declined
               .button
                 button#submit.btn-primary Submit
 // footer starts here

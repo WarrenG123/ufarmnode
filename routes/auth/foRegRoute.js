@@ -45,6 +45,7 @@ router.get("/edit_farmerOne/:id", async(req, res) => {
 router.post("/edit_farmerOne", async(req, res) => {
     try{
         await User.findOneAndUpdate({_id:req.query.id}, req.body);
+        // console.log(req.body)
         req.flash('success', 'farmer one has been updated');
         res.redirect("/aodash");
     }

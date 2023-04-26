@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/products", async(req, res) => {
     try{
-        let upload = await Upload.find({status:"approved"})
+        let upload = await Upload.find({status:"Approved"})
          res.render("product",{
            products:upload
          })

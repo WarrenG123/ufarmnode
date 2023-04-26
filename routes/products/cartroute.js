@@ -4,7 +4,7 @@ const Upload = require("../../models/productModel")
 
 router.get("/cart", async(req, res) => {
     try{
-        const product = await Upload.find()
+        const product = await Upload.find({status:"Approved"})
         res.render("cart",{
             data:product
         })
