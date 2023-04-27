@@ -35,7 +35,7 @@ head
           .card.header
             h5 APPROVE PRODUCT
           .card-body
-            form#upload(action='/approval?id='+product._id  onsubmit='validate(event)' method='post' enctype="multipart/form-data")
+            form#upload(action='/approval?id='+product._id   method='post' )
               .form.form-group
                 label  Name
                 input#fName.form-control(type='text' name='fname' value=product.fName disabled)
@@ -52,7 +52,6 @@ head
                 label Quantity
                 input#qty.form-control(type='text' name='quantity' value=product.quantity)
                 small#qtyErr
-             
               .form.form-group
                 label Status: 
                 select#option.form-control(name='status')
