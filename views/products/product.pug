@@ -44,11 +44,14 @@ div(w3-include-html='/includes/navbar.html')
                   .card-footer
                     |  Product : #{product.productname}
                     br
-                    |   Price: UGX #{product.unitprice}  Quantity:#{product.quantity}
+                    |   Price: UGX #{product.unitprice} each  
+                    br
+                    | Quantity:#{product.quantity}
                     br
                     |
-                    button.btn.btn-primary.btn-sm(type='button' href='cart') Buy 
-                    br
+                    form(method="POST" action="/buy")
+                      input(type="hidden", name="productId", value=product._id )
+                      button.btn.btn-primary(type="submit") Buy
       else 
                     p 
                       h4 There are no products yet, check again in a few minutes

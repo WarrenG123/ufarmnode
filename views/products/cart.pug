@@ -59,9 +59,9 @@ if data.length
               button#call.btn.btn-success
                 i.bi.bi-telephone
                 |  Call
-                br
-              button#order.btn.btn-success
-                | Order
+              form(method="POST" action="/order")
+                      input(type="hidden", name="productId", value=product._id)
+                      button(type="submit") Order
              
         .col-4
           article.chatbox
@@ -80,12 +80,6 @@ if data.length
                 | #{product.delivery}
                 br
                 |                            
-            div
-              p
-                i.bi.bi-person
-                |  Pick up 
-                br
-                |                           
           article.pay
             header
               h4 Options for payment
@@ -93,11 +87,6 @@ if data.length
               p
                 i.bi.bi-cash-coin
                 | #{product.payMthd}
-                br
-            div
-              p
-                i.bi.bi-send-check
-                |  Mobile Money 
                 br
 else 
   p 
@@ -107,3 +96,13 @@ div(w3-include-html='/includes/footer.html')
 // footer ends here
 script(src='/includes/custom.js')
 script(src='/bootstrap/js/bootstrap.js')
+
+//const formData = new FormData(form); // Get the form data
+  const productId = formData.get("productId"); // Get the product ID from the form data
+  const response = await fetch("/order", {
+  method: "POST",
+  headers: {
+  "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ productId })
+  });
