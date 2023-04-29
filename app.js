@@ -22,6 +22,7 @@ const ufRoutes = require("./routes/ufRoutes");
 const foRoutes = require("./routes/foRoutes"); 
 
 app.use(flash());// to display flash messages
+
 app.use(session({
     secret: "secret",
     resave: false,
