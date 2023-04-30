@@ -35,30 +35,6 @@ router.get("/ufupload", connectEnsureLogin.ensureLoggedIn(), async(req, res) => 
     }
    
 });
-// router.get("/approval/:id", async(req, res) => {
-//     try{
-//         const data = await Upload.findOne({_id:req.params.id});
-//         res.render("approval", {product:data});
-//     }
-//     catch(err) {
-//         res.send("could not find upload");
-//         console.log(err);
-//     }
-// })
-
-// router.post("/approval", async(req, res) => {
-//     try{
-//         await Upload.findOneAndUpdate({_id:req.query.id}, req.body);
-//         console.log(req.body, "nothing here");
-//         // req.flash('info', 'Product status updated');
-//         res.redirect("/fodash");
-//     }
-//     catch(err) {
-//         res.send("Failed to update status");
-//         console.log(err);
-//     }
-// })
-
 
 router.get("/approval/:id", async(req, res) => {
     try{
