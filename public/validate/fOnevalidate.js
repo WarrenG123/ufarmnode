@@ -202,7 +202,7 @@ const validate = (event) => {
         uniqueNumberError.textContent = "Please fill in this field";
         uniqueNumberError.style = "color: red";
         error++;
-    } else if (!uniqueNumber.value.match(unregex.value)) {
+    } else if (!uniqueNumber.value.match(unregex)) {
         uniqueNumber.style.border = "1px solid red";
         uniqueNumberError.textContent = "The unique number should be in this format FO-001";
         uniqueNumberError.style = "color: red";
