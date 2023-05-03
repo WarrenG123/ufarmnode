@@ -9,7 +9,6 @@ router.get("/signup", (req, res) => {
 })
 
 router.post("/signup", async (req, res) => {
-    console.log(req.body);
     try {
         const user = new User(req.body);
         let uniqueid = await User.findOne({ uniqueid: req.body.uniqueid });
