@@ -14,7 +14,7 @@ head
     article {
     border-style: groove;
     border-radius: 10px;
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
     padding: 10px !important;
     }
     .main {
@@ -59,9 +59,9 @@ if data.length
               button#call.btn.btn-success
                 i.bi.bi-telephone
                 |  Call
-              form(method="POST" action="/order")
-                      input(type="hidden", name="productId", value=product._id)
-                      button(type="submit") Order
+                form(method="POST" action="/order")
+                        input(type="hidden", name="productId", value=product._id)
+                        button.btn.btn-success(type="submit") Order
              
         .col-4
           article.chatbox
@@ -97,12 +97,4 @@ div(w3-include-html='/includes/footer.html')
 script(src='/includes/custom.js')
 script(src='/bootstrap/js/bootstrap.js')
 
-//const formData = new FormData(form); // Get the form data
-  const productId = formData.get("productId"); // Get the product ID from the form data
-  const response = await fetch("/order", {
-  method: "POST",
-  headers: {
-  "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ productId })
-  });
+ 

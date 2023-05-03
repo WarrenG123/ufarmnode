@@ -65,15 +65,15 @@ const validate = (event) => {
         secondnameError.textContent = "";
     }
     // DOB
-    if (!bDate.value) {
-        bDate.style.border = "1px solid red";
-        birthDateError.textContent = "Please fill in this field";
-        birthDateError.style = "color: red";
-        error++;
-    }else {
-        bDate.style.border = "1px solid green";
-        birthDateError.textContent = "";
-    }
+    // if (!bDate.value) {
+    //     bDate.style.border = "1px solid red";
+    //     birthDateError.textContent = "Please fill in this field";
+    //     birthDateError.style = "color: red";
+    //     error++;
+    // }else {
+    //     bDate.style.border = "1px solid green";
+    //     birthDateError.textContent = "";
+    // }
     
     if (isNaN(age) || age < 10) {
         bDate.style.border = "1px solid red";
