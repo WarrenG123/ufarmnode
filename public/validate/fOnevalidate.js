@@ -3,9 +3,9 @@ const validate = (event) => {
     //pick input
     let firstName = document.getElementById("fName");
     let secondName = document.getElementById("sName");
-    // let birthDate = new Date(document.getElementById("dob").value);
-    // let age = calculateAge(birthDate);
-    // let bDate = document.getElementById("dob");
+    let birthDate = new Date(document.getElementById("db").value);
+    let age = calculateAge(birthDate);
+    let bDate = document.getElementById("db");
     let male = document.getElementById("male");
     let female = document.getElementById("female");
     let phoneNumber = document.getElementById("pNum");
@@ -26,7 +26,7 @@ const validate = (event) => {
     //pick error
     let firstNameError = document.getElementById("fNameErr");
     let secondNameError = document.getElementById("sNameErr");
-    // let birthDateError = document.getElementById("dbErr");
+    let birthDateError = document.getElementById("dbErr");
     let genderError = document.getElementById("gndErr");
     let phoneNumberError = document.getElementById("pNumErr");
     let ninNumberError = document.getElementById("ninErr");
@@ -92,15 +92,15 @@ const validate = (event) => {
     //     birthDateError.textContent = "";
     // }
     
-    // if (isNaN(age) || age < 10) {
-    //     bDate.style.border = "1px solid red";
-    //     birthDateError.textContent = "Please enter a valid date of birth (must be at least 10 years old)";
-    //     birthDateError.style.color = "red";
-    //     error++;
-    // } else {
-    //     bDate.style.border = "1px solid green";
-    //     birthDateError.textContent = "";
-    // }
+    if (isNaN(age) || age < 10) {
+        bDate.style.border = "1px solid red";
+        birthDateError.textContent = "Please enter a valid date of birth (must be at least 10 years old)";
+        birthDateError.style.color = "red";
+        error++;
+    } else {
+        bDate.style.border = "1px solid green";
+        birthDateError.textContent = "";
+    }
     // gender
     if (!(female.checked || male.checked)) {
         genderError.innerHTML = "Pick your gender";
@@ -259,12 +259,12 @@ const validate = (event) => {
 }
 
 
-// function calculateAge(birthDate) {
-//     let today = new Date();
-//     let age = today.getFullYear() - birthDate.getFullYear();
-//     let monthDiff = today.getMonth() - birthDate.getMonth();
-//     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-//         age--;
-//     }
-//     return age;
-// }
+function calculateAge(birthDate) {
+    let today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
