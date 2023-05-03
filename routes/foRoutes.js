@@ -15,7 +15,8 @@ router.get("/fodash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
         res.render("foDash", {
             urbanFarmers: newUrbanFarmers,
             activeFarmers,
-            farmerWard
+            farmerWard,
+            message: req.flash('reg'),
         })
     }
     catch (error) {
@@ -50,7 +51,7 @@ router.get("/approval/:id", async(req, res) => {
 router.post("/approval", async(req, res) => {
     try{
         await Upload.findOneAndUpdate({_id:req.query.id}, req.body);
-        console.log(req.body, "nothing here");
+        // console.log(req.body, "nothing here");
         res.redirect("/fodash");
     }
     catch(err) {

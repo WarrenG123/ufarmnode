@@ -13,7 +13,9 @@ let storage = multer.diskStorage({
 let imageUpload = multer({ storage: storage });
 //, connectEnsureLogin.ensureLoggedIn()
 router.get("/ufdash", (req, res) => {
-    res.render("ufDash")
+    res.render("ufDash",{
+        message: req.flash('info') 
+    })
 });
 //to get upload form
 router.get("/upload", (req, res) => {
@@ -26,7 +28,7 @@ router.post("/upload", imageUpload.single("productimage"), (req, res) => {
         const upload = new Upload(req.body);
         upload.productimage = req.file.originalname
         upload.save();
-        req.flash('success', 'product has been uploaded');
+        req.flash('info', 'product has been uploaded');
         res.redirect("/ufdash");
     }
     catch (error) {

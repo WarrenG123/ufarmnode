@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Upload = require("../../models/productModel");
 const Purchase = require("../../models/purchaseModel");
-// const flash = require('connect-flash');
+const flash = require('connect-flash');
 
 
 router.post("/buy", async (req, res) => {
@@ -29,8 +29,7 @@ router.post("/order", async (req, res) => {
       product: product._id
     });
     await purchase.save();
-    // res.send("Purchase completed successfully");
-    // req.flash('bought', ' Your order has been successfully sent');
+    req.flash('bought', ' Your order has been successfully sent');
     res.redirect("/products")
   } catch (err) {
     console.error(err);
@@ -38,17 +37,5 @@ router.post("/order", async (req, res) => {
   }
 });
 
-
-// router.get("/cart", async(req, res) => {
-//     try{
-//         const product = await Upload.find({status:"Approved"}) 
-//         res.render("cart",{
-//             data:product
-//         })
-//     }
-//     catch (error) {
-
-//     }
-// });
 
 module.exports = router;

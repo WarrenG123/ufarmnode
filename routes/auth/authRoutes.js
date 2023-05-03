@@ -4,7 +4,9 @@ const User = require("../../models/userModel");
 const passport = require('passport');
 
 router.get("/login", (req, res) => {
-    res.render("login");
+    res.render("login",{
+        message: req.flash('signup'),
+    });
 })
 
 router.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), async (req, res) => {

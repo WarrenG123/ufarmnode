@@ -21,7 +21,7 @@ router.post("/signup", async (req, res) => {
                 if (error) {
                     throw error
                 };
-                req.flash('success', 'You have been registered');
+                req.flash('signup', 'You have been registered');
                 res.redirect("login");
             })
         }

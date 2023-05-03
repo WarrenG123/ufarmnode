@@ -32,6 +32,8 @@ div(w3-include-html='/includes/navbar.html')
 // nav bar ends here
 .container-fluid.mt-3
   .container-fluid
+    if message
+      .alert.alert-bought= message
     .row
       h4  Products
       //- h5 See all
