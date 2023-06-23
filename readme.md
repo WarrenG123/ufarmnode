@@ -1,11 +1,1 @@
-
-styling cards
-get date function
-regex for nin
-color scheme
-styling body
-
-to do
-cart page
-home page
-navbar
+# This is a website called Ufarm which is meant to connect farmers in urban areas to customers hence promoting urban farming
